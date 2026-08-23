@@ -1,0 +1,52 @@
+{
+  "name": "legal-ai-job-tracker",
+  "version": "0.2.0",
+  "description": "面向法律 AI 从业者与转型者的公开招聘信号看板。",
+  "private": true,
+  "license": "MIT",
+  "author": "Zhuoqun Zhang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hermes-nomos/legal-ai-job-tracker.git"
+  },
+  "homepage": "https://github.com/hermes-nomos/legal-ai-job-tracker#readme",
+  "keywords": [
+    "legal-ai",
+    "legal-tech",
+    "job-tracker",
+    "career-intelligence"
+  ],
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vinext dev",
+    "build": "vinext build",
+    "start": "vinext start",
+    "test": "vinext build && node --test tests/rendered-html.test.mjs",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
+  },
+  "dependencies": {
+    "next": "16.3.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.53.1",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.34",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.3.2",
+    "react-server-dom-webpack": "19.2.8",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vinext": "1.0.0-beta.8",
+    "vite": "8.2.2",
+    "wrangler": "4.125.0"
+  },
+  "type": "module"
+}

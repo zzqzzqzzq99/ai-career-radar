@@ -1,0 +1,39 @@
+name: 新增岗位线索
+description: 提交一个公开可验证的法律 AI 岗位
+title: "[岗位] 公司名称 - 岗位名称"
+labels: ["data", "new-job"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: 原始来源链接
+      description: 请提供企业官网或公开招聘页面的 HTTPS 链接。
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: role
+    attributes:
+      label: 公司与岗位
+      placeholder: 公司名称 / 岗位名称
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: 地点及其他基本信息
+      placeholder: 城市、薪资、经验、学历；未知项可写未公开
+  - type: textarea
+    id: relevance
+    attributes:
+      label: 为什么属于法律 AI
+      description: 简述岗位与法律、产品、AI、数据、交付或合规的关系，不要复制完整 JD。
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 提交确认
+      options:
+        - label: 我没有提交求职者个人信息，也没有绕过登录或访问限制获取该信息。
+          required: true

@@ -1,0 +1,32 @@
+name: 数据纠错或失效反馈
+description: 纠正现有记录或报告岗位已经失效
+title: "[纠错] 公司名称 - 岗位名称"
+labels: ["data", "correction"]
+body:
+  - type: input
+    id: record
+    attributes:
+      label: 记录名称或原始链接
+      placeholder: 公司 / 岗位 / https://...
+    validations:
+      required: true
+  - type: dropdown
+    id: correction_type
+    attributes:
+      label: 问题类型
+      options:
+        - 岗位已经失效
+        - 公司或岗位名称错误
+        - 地点、薪资、经验或学历错误
+        - 来源链接错误
+        - 分类、标签或研究判断不准确
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 修正内容与依据
+      description: 请说明建议改成什么，并提供公开可验证的依据。
+    validations:
+      required: true
