@@ -32,15 +32,17 @@ test("server-renders the legal AI job dashboard", async () => {
   assert.match(html, /<title>法律 AI 追踪｜招聘情报看板<\/title>/i);
   assert.match(html, /企业正在为怎样的/);
   assert.match(html, /全库条目/);
-  assert.match(html, /人工维护的公开信息快照/);
-  assert.match(html, /投递前请再次打开原始来源核验/);
+  assert.match(html, /每日两次自动检索并发布/);
+  assert.match(html, /岗位真实性和有效性由访问者自行判断/);
   assert.doesNotMatch(html, /Your site is taking shape|vinext-starter/i);
 });
 
-test("keeps source links and collection boundaries explicit", async () => {
-  const [page, refreshRoute, layout, packageJson] = await Promise.all([
+test("keeps source links and automated collection boundaries explicit", async () => {
+  const [page, refreshRoute, refreshScript, autoFeed, layout, packageJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/api/refresh/route.ts", import.meta.url), "utf8"),
+    readFile(new URL("../scripts/refresh-jobs.mjs", import.meta.url), "utf8"),
+    readFile(new URL("../public/jobs-auto.json", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
@@ -55,8 +57,12 @@ test("keeps source links and collection boundaries explicit", async () => {
   assert.doesNotMatch(jobsBlock[1], /sourceUrl:\s*["']http:\/\//i);
 
   assert.match(page, /不绕过登录或反爬限制/);
-  assert.match(page, /人工维护的阶段性快照/);
+  assert.match(page, /jobs-auto\.json/);
+  assert.match(page, /自动发现/);
   assert.match(page, /待复核/);
+  assert.match(refreshScript, /zhaopin\.com\/sou/);
+  assert.doesNotMatch(refreshScript, /\bCookie\b|\bAuthorization\b/);
+  assert.ok(Array.isArray(JSON.parse(autoFeed).items));
   assert.match(refreshRoute, /https:\/\/www\.zhaopin\.com\/sou\//);
   assert.doesNotMatch(refreshRoute, /\bCookie\b|\bAuthorization\b/);
   assert.match(layout, /NEXT_PUBLIC_SITE_URL/);
@@ -80,7 +86,9 @@ test("builds a GitHub Pages mirror with repository-relative assets", async () =>
 
   assert.match(html, /\/legal-ai-job-tracker\/assets\//);
   assert.match(html, /hermes-nomos\.github\.io\/legal-ai-job-tracker/);
-  assert.match(pageSource, /人工核验快照/);
+  assert.match(pageSource, /重新载入最新自动数据/);
+  assert.match(workflow, /cron: "0 0,12 \* \* \*"/);
+  assert.match(workflow, /npm run refresh:jobs/);
   assert.match(workflow, /actions\/deploy-pages@v4/);
   assert.match(
     readme,

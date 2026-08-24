@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 type Job = {
   id: number;
@@ -14,7 +14,7 @@ type Job = {
   added: string;
   source: string;
   sourceUrl: string;
-  status: "热招" | "活跃" | "观察" | "失效";
+  status: "热招" | "活跃" | "观察" | "失效" | "自动发现";
   category: "产品" | "技术" | "运营";
   scope: string[];
   summary: string;
@@ -30,7 +30,7 @@ type RoleFamily =
   | "AI 原生法务"
   | "市场信号";
 
-type VerificationState = "在招" | "待复核" | "已关闭" | "市场信号";
+type VerificationState = "自动发现" | "在招" | "待复核" | "已关闭" | "市场信号";
 type AudienceFit = "法律背景友好" | "交叉背景优先" | "技术背景优先";
 type SourceTier = "企业官方" | "主流招聘平台" | "职业社交平台" | "公开转载";
 
@@ -43,6 +43,13 @@ type EnrichedJob = Job & {
   sourceTier: SourceTier;
   relation: "法律垂类" | "相邻赛道" | "市场信号";
   careerLevel: "校招 / 初级" | "中级" | "高级 / 专家" | "未公开";
+};
+
+type AutoFeed = {
+  generatedAt: string;
+  queryCount: number;
+  itemCount: number;
+  items: Job[];
 };
 
 const SNAPSHOT_DATE = "2026-08-24";
@@ -784,6 +791,24 @@ function inferEmployerType(id: number): string {
   return "企业内部法务端";
 }
 
+function inferRoleFamily(job: Job): RoleFamily {
+  if (roleFamilyById[job.id]) return roleFamilyById[job.id];
+  const text = `${job.title} ${job.summary} ${job.scope.join(" ")}`.toLowerCase();
+  if (/知识工程|评测|标注|训练师|rubric|数据质量/.test(text)) {
+    return "法律知识工程与评测";
+  }
+  if (/解决方案|售前|实施|客户成功|培训顾问|交付/.test(text)) {
+    return "解决方案与交付";
+  }
+  if (/算法|开发工程师|rag|llm|fde|技术负责人/.test(text)) {
+    return "技术研发与 FDE";
+  }
+  if (/法务|律师|合规/.test(job.title) && !/产品/.test(job.title)) {
+    return "AI 原生法务";
+  }
+  return "法律科技产品";
+}
+
 function inferCareerLevel(job: Job): EnrichedJob["careerLevel"] {
   if (entryLevelIds.has(job.id)) return "校招 / 初级";
   if (/1–3年|2年以上|3–5年/.test(job.experience)) return "中级";
@@ -795,14 +820,19 @@ function inferCareerLevel(job: Job): EnrichedJob["careerLevel"] {
 
 function inferVerifiedAt(job: Job): string {
   if (verifiedTodayIds.has(job.id)) return SNAPSHOT_DATE;
+  const fullDate = job.date.match(/\d{4}-\d{2}-\d{2}/)?.[0];
+  if (fullDate) return fullDate;
   const dates = [...job.date.matchAll(/(\d{2})-(\d{2})/g)];
   const latest = dates.at(-1);
   return latest ? `2026-${latest[1]}-${latest[2]}` : "未记录";
 }
 
 function enrichJob(job: Job): EnrichedJob {
+  const roleFamily = inferRoleFamily(job);
   const verificationState: VerificationState =
-    job.id === 13
+    job.status === "自动发现"
+      ? "自动发现"
+      : job.id === 13
       ? "市场信号"
       : closedIds.has(job.id)
         ? "已关闭"
@@ -812,11 +842,17 @@ function enrichJob(job: Job): EnrichedJob {
 
   return {
     ...job,
-    roleFamily: roleFamilyById[job.id],
+    roleFamily,
     verificationState,
     verifiedAt: inferVerifiedAt(job),
-    employerType: inferEmployerType(job.id),
-    audienceFit: technicalIds.has(job.id)
+    employerType: job.status === "自动发现" ? "自动发现来源" : inferEmployerType(job.id),
+    audienceFit: job.status === "自动发现"
+      ? roleFamily === "AI 原生法务" || roleFamily === "解决方案与交付"
+        ? "法律背景友好"
+        : roleFamily === "技术研发与 FDE"
+          ? "技术背景优先"
+          : "交叉背景优先"
+      : technicalIds.has(job.id)
       ? "技术背景优先"
       : legalFriendlyIds.has(job.id)
         ? "法律背景友好"
@@ -829,7 +865,10 @@ function enrichJob(job: Job): EnrichedJob {
 
 export default function Home() {
   const [tab, setTab] = useState<"日报" | "库检索" | "趋势">("库检索");
-  const records = useMemo(() => jobs.map(enrichJob), []);
+  const [autoJobs, setAutoJobs] = useState<Job[]>([]);
+  const [autoUpdatedAt, setAutoUpdatedAt] = useState<string | null>(null);
+  const [autoNote, setAutoNote] = useState("正在载入自动数据");
+  const [refreshing, setRefreshing] = useState(false);
   const [query, setQuery] = useState("");
   const [family, setFamily] = useState("全部岗位族");
   const [city, setCity] = useState("全国");
@@ -840,6 +879,48 @@ export default function Home() {
   const [selected, setSelected] = useState<EnrichedJob | null>(null);
   const [bookmarks, setBookmarks] = useState<number[]>([]);
   const [showMethod, setShowMethod] = useState(false);
+
+  const loadAutoFeed = useCallback(async (force = false) => {
+    setRefreshing(true);
+    if (force) setAutoNote("正在重新载入最近一次自动结果");
+    try {
+      const url = new URL("jobs-auto.json", window.location.href);
+      url.searchParams.set("t", String(Date.now()));
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const payload = (await response.json()) as AutoFeed;
+      setAutoJobs(Array.isArray(payload.items) ? payload.items : []);
+      setAutoUpdatedAt(payload.generatedAt || null);
+      setAutoNote(
+        payload.items?.length
+          ? `自动发现 ${payload.items.length} 条，点击来源自行判断`
+          : "本轮未发现新条目",
+      );
+    } catch {
+      setAutoNote("自动数据暂时未载入，可稍后重试");
+    } finally {
+      setRefreshing(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      void loadAutoFeed();
+    }, 0);
+    return () => window.clearTimeout(timeoutId);
+  }, [loadAutoFeed]);
+
+  const records = useMemo(() => {
+    const seen = new Set<string>();
+    return [...autoJobs, ...jobs]
+      .filter((job) => {
+        const key = job.sourceUrl.toLowerCase().replace(/[?#].*$/, "").replace(/\/$/, "");
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .map(enrichJob);
+  }, [autoJobs]);
 
   const sourceStats = useMemo(() => {
     const tones: Record<SourceTier, string> = {
@@ -916,14 +997,30 @@ export default function Home() {
     records.filter((job) => job.relation !== "市场信号").map((job) => job.company),
   ).size;
   const recruitingCount = records.filter(
-    (job) => job.verificationState === "在招",
+    (job) => ["自动发现", "在招"].includes(job.verificationState),
   ).length;
   const shenzhenCount = records.filter(
     (job) => job.city.includes("深圳") && job.verificationState !== "已关闭",
   ).length;
-  const dailyJobs = records.filter(
-    (job) => job.verifiedAt === SNAPSHOT_DATE && job.verificationState === "在招",
+  const automaticDailyJobs = records.filter(
+    (job) => job.verificationState === "自动发现",
   );
+  const dailyJobs = automaticDailyJobs.length
+    ? automaticDailyJobs
+    : records.filter(
+        (job) => job.verifiedAt === SNAPSHOT_DATE && job.verificationState === "在招",
+      );
+
+  const autoUpdatedLabel = autoUpdatedAt
+    ? new Date(autoUpdatedAt).toLocaleString("zh-CN", {
+        timeZone: "Asia/Shanghai",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      })
+    : "等待首次载入";
 
   return (
     <main>
@@ -940,8 +1037,17 @@ export default function Home() {
         </div>
         <div className="header-actions">
           <span className="updated">
-            <i /> 人工核验快照 · {SNAPSHOT_DATE}
+            <i /> 自动更新 {autoUpdatedLabel} · {autoNote}
           </span>
+          <button
+            className={`icon-button ${refreshing ? "refreshing" : ""}`}
+            aria-label="重新载入最新自动数据"
+            title="重新载入最近一次定时检索结果"
+            onClick={() => void loadAutoFeed(true)}
+            disabled={refreshing}
+          >
+            <span aria-hidden="true">↻</span>
+          </button>
           <button
             className="method-button"
             onClick={() => setShowMethod(true)}
@@ -966,7 +1072,7 @@ export default function Home() {
         </div>
         <div className="metric-panel" aria-label="核心统计">
           <div className="primary-metric">
-            <span>已核验在招</span>
+            <span>自动发现 / 已核验在招</span>
             <strong>{recruitingCount}</strong>
             <small>条</small>
           </div>
@@ -1065,6 +1171,7 @@ export default function Home() {
               <span>状态</span>
               <select value={status} onChange={(e) => setStatus(e.target.value)}>
                 <option>全部状态</option>
+                <option>自动发现</option>
                 <option>在招</option>
                 <option>待复核</option>
                 <option>已关闭</option>
@@ -1283,7 +1390,7 @@ export default function Home() {
           <strong>法律 AI 追踪</strong>
         </div>
         <p>
-          人工维护的公开信息快照 · 不保证持续在招，投递前请再次打开原始来源核验
+          每日两次自动检索并发布 · 系统提供来源链接，岗位真实性和有效性由访问者自行判断
         </p>
         <span>© 2026 LEGAL AI INTELLIGENCE</span>
       </footer>
@@ -1410,9 +1517,9 @@ export default function Home() {
               <li>
                 <span>04</span>
                 <div>
-                  <strong>人工核验与信号研判</strong>
+                  <strong>自动筛选与直接发布</strong>
                   <p>
-                    区分网页发布日期、入库日期和最后核验日期。只有本期重新打开公开来源、仍能确认招聘的岗位才标记为“在招”；其余统一标记为“待复核”。
+                    定时任务按法律与 AI 双重关键词筛选、按链接去重并生成摘要；新结果直接标记为“自动发现”，不等待维护者人工确认。
                   </p>
                 </div>
               </li>
@@ -1420,8 +1527,8 @@ export default function Home() {
             <div className="method-warning">
               <strong>当前运行方式</strong>
               <p>
-                当前版本是人工维护的阶段性快照，没有后台实时抓取或固定时点自动发布。
-                后续会在不绕过登录、验证码、robots.txt 与访问限制的前提下，逐步增加官方来源存活检测和更新提醒。
+                GitHub Actions 每天约 08:00 与 20:00（北京时间）执行公开搜索、更新数据并重新发布页面；GitHub
+                的任务队列可能造成少量延迟。右上角刷新按钮只重新载入最近一次自动结果，不会在浏览器里临时启动搜索。
               </p>
             </div>
           </section>
@@ -1440,19 +1547,26 @@ function DailyView({
   onOpen: (job: EnrichedJob) => void;
   onSearch: () => void;
 }) {
+  const batchDate = dailyJobs[0]?.verifiedAt ?? SNAPSHOT_DATE;
+  const [year = "2026", month = "08", day = "24"] = batchDate.split("-");
+  const weekday = new Date(`${batchDate}T00:00:00+08:00`).toLocaleDateString(
+    "zh-CN",
+    { weekday: "long", timeZone: "Asia/Shanghai" },
+  );
+
   return (
     <section className="daily-view">
       <div className="daily-date">
-        <span>2026</span>
-        <strong>08.24</strong>
-        <p>星期一 · 第 06 期</p>
+        <span>{year}</span>
+        <strong>{month}.{day}</strong>
+        <p>{weekday} · 自动批次</p>
       </div>
       <div className="daily-main">
         <span className="eyebrow">TODAY&apos;S BRIEFING</span>
-        <h2>本期已核验招聘情报</h2>
+        <h2>本期自动招聘情报</h2>
         <p className="daily-lead">
-          本期新增信号覆盖法律模型评测、企业级 Agent 产品、AI 原生法务以及
-          LegalTech 产品与客户成功。深圳机会不再只有资深产品岗，也出现了校招和交付型入口。
+          系统每天两次检索法律 AI、法务数智化、Legal Engineer、模型评测、
+          解决方案与企业智能体等关键词。以下条目未经维护者逐条确认，请直接打开来源判断是否适合投递。
         </p>
         <div className="daily-cards">
           {dailyJobs.map((job, index) => (

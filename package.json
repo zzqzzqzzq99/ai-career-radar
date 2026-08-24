@@ -23,6 +23,7 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "build:pages": "vite build --config vite.pages.config.ts",
+    "refresh:jobs": "node scripts/refresh-jobs.mjs",
     "start": "vinext start",
     "test": "vinext build && vite build --config vite.pages.config.ts && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern pages-dist --ignore-pattern .next"

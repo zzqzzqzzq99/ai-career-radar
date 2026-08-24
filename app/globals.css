@@ -548,6 +548,10 @@ main {
   background: #46745d;
 }
 
+.tag-status.自动发现 {
+  background: #b4622f;
+}
+
 .tag-status.待复核 {
   background: #8b7441;
 }
