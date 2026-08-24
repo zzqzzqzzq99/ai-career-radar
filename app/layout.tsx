@@ -3,10 +3,10 @@ import "./globals.css";
 
 const title = "法律 AI 追踪｜招聘情报看板";
 const description =
-  "追踪企业法务 AI、法律科技、合规智能体岗位与能力趋势的公开招聘情报库。";
+  "按六类岗位族追踪法律 AI、法务数智化、知识评测与相邻智能体岗位，并标注来源层级和最近核验时间。";
 const metadataBase = new URL(
   process.env.NEXT_PUBLIC_SITE_URL ??
-    "https://legal-ai-talent-radar.zhangzhuoqun70.chatgpt.site",
+    "https://hermes-nomos.github.io/legal-ai-job-tracker/",
 );
 
 export const metadata: Metadata = {

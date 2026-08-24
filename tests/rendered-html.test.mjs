@@ -32,8 +32,8 @@ test("server-renders the legal AI job dashboard", async () => {
   assert.match(html, /<title>法律 AI 追踪｜招聘情报看板<\/title>/i);
   assert.match(html, /企业正在为怎样的/);
   assert.match(html, /全库条目/);
-  assert.match(html, /公开信息研究样例/);
-  assert.match(html, /岗位状态请以原始招聘页面为准/);
+  assert.match(html, /人工维护的公开信息快照/);
+  assert.match(html, /投递前请再次打开原始来源核验/);
   assert.doesNotMatch(html, /Your site is taking shape|vinext-starter/i);
 });
 
@@ -55,7 +55,8 @@ test("keeps source links and collection boundaries explicit", async () => {
   assert.doesNotMatch(jobsBlock[1], /sourceUrl:\s*["']http:\/\//i);
 
   assert.match(page, /不绕过登录或反爬限制/);
-  assert.match(page, /岗位状态请以原始招聘页面为准/);
+  assert.match(page, /人工维护的阶段性快照/);
+  assert.match(page, /待复核/);
   assert.match(refreshRoute, /https:\/\/www\.zhaopin\.com\/sou\//);
   assert.doesNotMatch(refreshRoute, /\bCookie\b|\bAuthorization\b/);
   assert.match(layout, /NEXT_PUBLIC_SITE_URL/);
@@ -79,7 +80,7 @@ test("builds a GitHub Pages mirror with repository-relative assets", async () =>
 
   assert.match(html, /\/legal-ai-job-tracker\/assets\//);
   assert.match(html, /hermes-nomos\.github\.io\/legal-ai-job-tracker/);
-  assert.match(pageSource, /hostname\.endsWith\("\.github\.io"\)/);
+  assert.match(pageSource, /人工核验快照/);
   assert.match(workflow, /actions\/deploy-pages@v4/);
   assert.match(
     readme,

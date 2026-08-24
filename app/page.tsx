@@ -21,7 +21,142 @@ type Job = {
   signal: string;
 };
 
+type RoleFamily =
+  | "企业内部法务 AI"
+  | "法律科技产品"
+  | "解决方案与交付"
+  | "法律知识工程与评测"
+  | "技术研发与 FDE"
+  | "AI 原生法务"
+  | "市场信号";
+
+type VerificationState = "在招" | "待复核" | "已关闭" | "市场信号";
+type AudienceFit = "法律背景友好" | "交叉背景优先" | "技术背景优先";
+type SourceTier = "企业官方" | "主流招聘平台" | "职业社交平台" | "公开转载";
+
+type EnrichedJob = Job & {
+  roleFamily: RoleFamily;
+  verificationState: VerificationState;
+  verifiedAt: string;
+  employerType: string;
+  audienceFit: AudienceFit;
+  sourceTier: SourceTier;
+  relation: "法律垂类" | "相邻赛道" | "市场信号";
+  careerLevel: "校招 / 初级" | "中级" | "高级 / 专家" | "未公开";
+};
+
+const SNAPSHOT_DATE = "2026-08-24";
+const ROLE_FAMILIES: RoleFamily[] = [
+  "企业内部法务 AI",
+  "法律科技产品",
+  "解决方案与交付",
+  "法律知识工程与评测",
+  "技术研发与 FDE",
+  "AI 原生法务",
+];
+
 const jobs: Job[] = [
+  {
+    id: 32,
+    company: "阿里巴巴晓天衡宇",
+    title: "大模型标注评测工程师（金融 / 法律 / 医疗）：设计专业评测与质量标准",
+    city: "杭州",
+    salary: "薪资未公开",
+    experience: "3年以上",
+    education: "本科",
+    date: "07-23 更新 · 08-24 核验",
+    added: "08-24",
+    source: "公开招聘转载",
+    sourceUrl: "https://www.mianshima.com/job/3/100025060002",
+    status: "热招",
+    category: "技术",
+    scope: ["模型评测", "Rubric 设计", "数据质量"],
+    summary:
+      "面向金融、法律和医疗等专业领域建设标注与评测体系，制定专业数据标准，识别 LLM Judge 偏差与验证器漏洞，并推动数据质量闭环。",
+    signal:
+      "法律专业判断正在被拆解为可执行的评测标准、质量验收和奖励信号，形成法律人进入模型生产链路的新入口。",
+  },
+  {
+    id: 31,
+    company: "深圳传音控股",
+    title: "AI 产品经理（校招）：参与企业级 Agent 平台、RAG 与评测机制设计",
+    city: "深圳",
+    salary: "薪资未公开",
+    experience: "校园招聘",
+    education: "本科",
+    date: "06-17 发布 · 08-24 核验",
+    added: "08-24",
+    source: "校招信息平台",
+    sourceUrl:
+      "https://www.besthotsearch.com/jobs/c84524bb43d1e658b78e2c01c1624695",
+    status: "热招",
+    category: "产品",
+    scope: ["Agent 平台", "RAG", "效果评测"],
+    summary:
+      "参与企业级 Agent 的创建、配置、编排、部署和监控，开展企业客户访谈与场景拆解，并设计工具接入、权限、多智能体协作和效果评估机制。",
+    signal:
+      "这是法律人可关注的相邻赛道：岗位向校招生开放，能力模型与企业法务 AI 工作台高度重合，但不要求既有法律科技履历。",
+  },
+  {
+    id: 30,
+    company: "影石创新",
+    title: "法务管培生（2027校招）：用 AI 改造合同、检索、争议与合规工作流",
+    city: "深圳",
+    salary: "薪资未公开",
+    experience: "校园招聘",
+    education: "硕士",
+    date: "07-20 更新 · 08-24 核验",
+    added: "08-24",
+    source: "校招信息平台",
+    sourceUrl: "https://www.shushuqiuzhi.com/position/423362",
+    status: "热招",
+    category: "运营",
+    scope: ["AI 法务提效", "法律检索", "工作流沉淀"],
+    summary:
+      "在合同、争议解决和多领域合规工作中主动使用通用 AI 工具，完成文书优化、合同筛查、批量整理和智能检索，并沉淀标准化办公方法。",
+    signal:
+      "岗位名称仍是传统法务，但 AI 实操、Prompt 优化和智能文档处理已成为明确加分项，代表“AI 原生法务”岗位正在出现。",
+  },
+  {
+    id: 29,
+    company: "得理法务",
+    title: "产品经理：规划法律 SaaS 与 AI 应用并推动客户场景落地",
+    city: "深圳",
+    salary: "薪资未公开",
+    experience: "3年以上",
+    education: "本科",
+    date: "招聘页持续招募 · 08-24 核验",
+    added: "08-24",
+    source: "得理官网",
+    sourceUrl: "https://www.delilegal.com/recruitment",
+    status: "热招",
+    category: "产品",
+    scope: ["法律 SaaS", "平台产品", "客户场景"],
+    summary:
+      "负责法律科技平台产品策划与重要模块，理解 AI 应用场景，结合客户需求、用户体验和产品传播推进法律 SaaS 持续迭代。",
+    signal:
+      "深圳法律科技厂商仍在招聘兼具平台产品、客户表达与法律场景理解的复合人才，是法律背景转产品的直接样本。",
+  },
+  {
+    id: 28,
+    company: "得理法务",
+    title: "客户成功：推动法律科技产品采用、需求反馈与持续价值",
+    city: "深圳",
+    salary: "薪资未公开",
+    experience: "经验未公开",
+    education: "本科",
+    date: "招聘页持续招募 · 08-24 核验",
+    added: "08-24",
+    source: "得理官网",
+    sourceUrl: "https://www.delilegal.com/recruitment",
+    status: "热招",
+    category: "运营",
+    scope: ["客户成功", "产品采用", "需求反馈"],
+    summary:
+      "服务法律科技客户，响应使用问题、推动产品采用并把一线需求反馈给内部团队，要求理解数字化转型趋势并具备组织协调能力。",
+    signal:
+      "解决方案与客户成功是法律人进入 LegalTech 的低摩擦入口：专业理解和沟通能力可以先创造价值，再逐步补齐产品方法。",
+  },
   {
     id: 27,
     company: "华宇元典",
@@ -219,7 +354,7 @@ const jobs: Job[] = [
     salary: "25–50K · 15薪",
     experience: "经验不限",
     education: "本科",
-    date: "07-30 核验",
+    date: "截止 09-28 · 08-24 核验",
     added: "07-30",
     source: "字节招聘聚合页",
     sourceUrl:
@@ -305,9 +440,9 @@ const jobs: Job[] = [
     education: "硕士",
     date: "07-30 核验",
     added: "07-30",
-    source: "LinkedIn",
+    source: "公开招聘转载",
     sourceUrl:
-      "https://cn.linkedin.com/jobs/view/%E6%B3%95%E5%8A%A1ai%E7%AE%A1%E5%9F%B9%E7%94%9F8232-at-%E7%B4%AB%E5%85%89%E5%B1%95%E9%94%90-4437178166",
+      "https://bebee.com/cn/jobs/ai8232--ss-cn-ah3x68",
     status: "活跃",
     category: "运营",
     scope: ["Prompt 库", "合同提取", "数据安全"],
@@ -401,12 +536,12 @@ const jobs: Job[] = [
     company: "腾讯",
     title: "智能体—法律行业产品专家：建设合同审核、检索与合规智能体",
     city: "深圳",
-    salary: "AI估算 35–55K",
+    salary: "未公开（转载页估算 35–55K）",
     experience: "资深",
     education: "不限",
-    date: "07-29",
+    date: "07-03 发布 · 08-24 核验",
     added: "07-29",
-    source: "腾讯招聘",
+    source: "公开职位镜像（标注来源：腾讯官网）",
     sourceUrl:
       "https://watchjobs.net/zh/explore/job/TENCENT_2058757448881324032/%E6%99%BA%E8%83%BD%E4%BD%93-%E6%B3%95%E5%BE%8B%E8%A1%8C%E4%B8%9A%E4%BA%A7%E5%93%81%E4%B8%93%E5%AE%B6-%E8%85%BE%E8%AE%AF",
     status: "热招",
@@ -585,33 +720,159 @@ const jobs: Job[] = [
   },
 ];
 
-const sourceStats = [
-  { name: "企业招聘与聚合", count: 6, tone: "dark" },
-  { name: "招聘平台", count: 13, tone: "gold" },
-  { name: "职业社交平台", count: 6, tone: "blue" },
-  { name: "行业聚合页", count: 2, tone: "soft" },
-];
+const roleFamilyById: Record<number, RoleFamily> = {
+  1: "企业内部法务 AI",
+  2: "企业内部法务 AI",
+  3: "企业内部法务 AI",
+  4: "企业内部法务 AI",
+  5: "法律科技产品",
+  6: "企业内部法务 AI",
+  7: "技术研发与 FDE",
+  8: "AI 原生法务",
+  9: "企业内部法务 AI",
+  10: "法律科技产品",
+  11: "企业内部法务 AI",
+  12: "企业内部法务 AI",
+  13: "市场信号",
+  14: "AI 原生法务",
+  15: "法律知识工程与评测",
+  16: "法律科技产品",
+  17: "法律知识工程与评测",
+  18: "企业内部法务 AI",
+  19: "技术研发与 FDE",
+  20: "技术研发与 FDE",
+  21: "法律科技产品",
+  22: "解决方案与交付",
+  23: "解决方案与交付",
+  24: "技术研发与 FDE",
+  25: "法律知识工程与评测",
+  26: "技术研发与 FDE",
+  27: "法律知识工程与评测",
+  28: "解决方案与交付",
+  29: "法律科技产品",
+  30: "AI 原生法务",
+  31: "技术研发与 FDE",
+  32: "法律知识工程与评测",
+};
+
+const legalFriendlyIds = new Set([8, 13, 14, 15, 17, 22, 25, 27, 28, 30]);
+const technicalIds = new Set([7, 20, 24, 26]);
+const entryLevelIds = new Set([8, 14, 15, 17, 27, 30, 31]);
+const verifiedTodayIds = new Set([5, 14, 28, 29, 30, 31, 32]);
+const closedIds = new Set([8, 19]);
+
+function inferSourceTier(job: Job): SourceTier {
+  if (
+    job.source.includes("官网") ||
+    ["百度招聘", "阿里招聘"].includes(job.source)
+  ) {
+    return "企业官方";
+  }
+  if (job.source.includes("智联") || job.source.includes("BOSS")) {
+    return "主流招聘平台";
+  }
+  if (job.source.includes("LinkedIn")) return "职业社交平台";
+  return "公开转载";
+}
+
+function inferEmployerType(id: number): string {
+  if ([20, 26].includes(id)) return "律所";
+  if ([10, 16, 17, 21, 27, 28, 29].includes(id)) return "法律科技厂商";
+  if ([22, 23, 24, 25].includes(id)) return "知识服务 / 项目交付";
+  if ([5, 7, 32].includes(id)) return "AI 平台 / 科技企业";
+  if (id === 13) return "办公平台产品";
+  return "企业内部法务端";
+}
+
+function inferCareerLevel(job: Job): EnrichedJob["careerLevel"] {
+  if (entryLevelIds.has(job.id)) return "校招 / 初级";
+  if (/1–3年|2年以上|3–5年/.test(job.experience)) return "中级";
+  if (/3年以上|5–10年|中高级|资深|专家/.test(job.experience)) {
+    return "高级 / 专家";
+  }
+  return "未公开";
+}
+
+function inferVerifiedAt(job: Job): string {
+  if (verifiedTodayIds.has(job.id)) return SNAPSHOT_DATE;
+  const dates = [...job.date.matchAll(/(\d{2})-(\d{2})/g)];
+  const latest = dates.at(-1);
+  return latest ? `2026-${latest[1]}-${latest[2]}` : "未记录";
+}
+
+function enrichJob(job: Job): EnrichedJob {
+  const verificationState: VerificationState =
+    job.id === 13
+      ? "市场信号"
+      : closedIds.has(job.id)
+        ? "已关闭"
+        : verifiedTodayIds.has(job.id)
+          ? "在招"
+          : "待复核";
+
+  return {
+    ...job,
+    roleFamily: roleFamilyById[job.id],
+    verificationState,
+    verifiedAt: inferVerifiedAt(job),
+    employerType: inferEmployerType(job.id),
+    audienceFit: technicalIds.has(job.id)
+      ? "技术背景优先"
+      : legalFriendlyIds.has(job.id)
+        ? "法律背景友好"
+        : "交叉背景优先",
+    sourceTier: inferSourceTier(job),
+    relation: job.id === 13 ? "市场信号" : job.id === 31 ? "相邻赛道" : "法律垂类",
+    careerLevel: inferCareerLevel(job),
+  };
+}
 
 export default function Home() {
-  const isGitHubPages =
-    typeof window !== "undefined" &&
-    window.location.hostname.endsWith(".github.io");
   const [tab, setTab] = useState<"日报" | "库检索" | "趋势">("库检索");
-  const [records, setRecords] = useState<Job[]>(jobs);
+  const records = useMemo(() => jobs.map(enrichJob), []);
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("全部岗位");
+  const [family, setFamily] = useState("全部岗位族");
   const [city, setCity] = useState("全国");
   const [status, setStatus] = useState("全部状态");
-  const [selected, setSelected] = useState<Job | null>(null);
+  const [careerLevel, setCareerLevel] = useState("全部经验");
+  const [audienceFit, setAudienceFit] = useState("全部背景");
+  const [sourceTier, setSourceTier] = useState("全部来源");
+  const [selected, setSelected] = useState<EnrichedJob | null>(null);
   const [bookmarks, setBookmarks] = useState<number[]>([]);
   const [showMethod, setShowMethod] = useState(false);
-  const [refreshing, setRefreshing] = useState(false);
-  const [refreshNote, setRefreshNote] = useState(() =>
-    isGitHubPages
-      ? "GitHub Pages 公开版 · 岗位状态以来源页面为准"
-      : "本轮新增 5 条 · 更新 0 条 · 失效 2 条",
-  );
-  const [lastUpdated, setLastUpdated] = useState("08-04 14:17");
+
+  const sourceStats = useMemo(() => {
+    const tones: Record<SourceTier, string> = {
+      企业官方: "dark",
+      主流招聘平台: "gold",
+      职业社交平台: "blue",
+      公开转载: "soft",
+    };
+    return (["企业官方", "主流招聘平台", "职业社交平台", "公开转载"] as SourceTier[])
+      .map((name) => ({
+        name,
+        count: records.filter((job) => job.sourceTier === name).length,
+        tone: tones[name],
+      }))
+      .filter((item) => item.count > 0);
+  }, [records]);
+
+  const capabilityStats = useMemo(() => {
+    const groups = [
+      ["Agent / 工作流", ["agent", "智能体", "工作流", "任务流"]],
+      ["合同 / CLM", ["合同", "clm"]],
+      ["知识库 / RAG", ["知识库", "rag", "知识图谱"]],
+      ["合规风控", ["合规", "风控", "风险"]],
+      ["评测与复核", ["评测", "复核", "核查", "校验", "验证"]],
+    ] as const;
+    return groups.map(([name, terms]) => ({
+      name,
+      count: records.filter((job) => {
+        const text = `${job.title} ${job.summary} ${job.scope.join(" ")}`.toLowerCase();
+        return terms.some((term) => text.includes(term));
+      }).length,
+    }));
+  }, [records]);
 
   const filtered = useMemo(() => {
     const keyword = query.trim().toLowerCase();
@@ -623,18 +884,25 @@ export default function Home() {
         job.source,
         job.summary,
         job.signal,
+        job.roleFamily,
+        job.employerType,
+        job.audienceFit,
+        job.sourceTier,
         ...job.scope,
       ]
         .join(" ")
         .toLowerCase();
       return (
         (!keyword || haystack.includes(keyword)) &&
-        (category === "全部岗位" || job.category === category) &&
+        (family === "全部岗位族" || job.roleFamily === family) &&
         (city === "全国" || job.city.includes(city)) &&
-        (status === "全部状态" || job.status === status)
+        (status === "全部状态" || job.verificationState === status) &&
+        (careerLevel === "全部经验" || job.careerLevel === careerLevel) &&
+        (audienceFit === "全部背景" || job.audienceFit === audienceFit) &&
+        (sourceTier === "全部来源" || job.sourceTier === sourceTier)
       );
     });
-  }, [records, query, category, city, status]);
+  }, [records, query, family, city, status, careerLevel, audienceFit, sourceTier]);
 
   const toggleBookmark = (id: number) => {
     setBookmarks((current) =>
@@ -644,55 +912,18 @@ export default function Home() {
     );
   };
 
-  const refreshNow = async () => {
-    if (refreshing) return;
-    if (isGitHubPages) {
-      setRefreshNote("静态公开版不执行实时抓取，请打开岗位来源核验最新状态");
-      return;
-    }
-    setRefreshing(true);
-    setRefreshNote("正在搜索公开招聘源…");
-    try {
-      const response = await fetch(`/api/refresh?t=${Date.now()}`, {
-        cache: "no-store",
-      });
-      const payload = (await response.json()) as {
-        ok: boolean;
-        checkedAt?: string;
-        message?: string;
-        items?: Job[];
-      };
-      if (!response.ok || !payload.ok) {
-        throw new Error(payload.message || "刷新失败");
-      }
-      const incoming = payload.items ?? [];
-      const urls = new Set(
-        records.map((item) =>
-          item.sourceUrl.toLowerCase().replace(/\/$/, ""),
-        ),
-      );
-      const fresh = incoming.filter((item) => {
-        const key = item.sourceUrl.toLowerCase().replace(/\/$/, "");
-        if (urls.has(key)) return false;
-        urls.add(key);
-        return true;
-      });
-      const addedCount = fresh.length;
-      setRecords((current) => [...fresh, ...current]);
-      setLastUpdated(payload.checkedAt ?? "刚刚");
-      setRefreshNote(
-        addedCount > 0
-          ? `实时新增 ${addedCount} 条，已置顶`
-          : `已扫描最新结果，本次无新增`,
-      );
-    } catch (error) {
-      setRefreshNote(
-        error instanceof Error ? error.message : "刷新失败，请稍后重试",
-      );
-    } finally {
-      setRefreshing(false);
-    }
-  };
+  const companyCount = new Set(
+    records.filter((job) => job.relation !== "市场信号").map((job) => job.company),
+  ).size;
+  const recruitingCount = records.filter(
+    (job) => job.verificationState === "在招",
+  ).length;
+  const shenzhenCount = records.filter(
+    (job) => job.city.includes("深圳") && job.verificationState !== "已关闭",
+  ).length;
+  const dailyJobs = records.filter(
+    (job) => job.verifiedAt === SNAPSHOT_DATE && job.verificationState === "在招",
+  );
 
   return (
     <main>
@@ -709,29 +940,8 @@ export default function Home() {
         </div>
         <div className="header-actions">
           <span className="updated">
-            <i /> 数据更新于 {lastUpdated} · {refreshNote}
+            <i /> 人工核验快照 · {SNAPSHOT_DATE}
           </span>
-          <button
-            className={`icon-button ${refreshing ? "refreshing" : ""}`}
-            aria-label={
-              isGitHubPages
-                ? "查看静态版数据说明"
-                : refreshing
-                  ? "正在刷新数据"
-                  : "立即刷新数据"
-            }
-            title={
-              isGitHubPages
-                ? "GitHub Pages 静态版：点击查看数据说明"
-                : refreshing
-                  ? "正在搜索公开招聘源"
-                  : "立即实时刷新"
-            }
-            onClick={refreshNow}
-            disabled={refreshing}
-          >
-            <span aria-hidden="true">↻</span>
-          </button>
           <button
             className="method-button"
             onClick={() => setShowMethod(true)}
@@ -750,36 +960,36 @@ export default function Home() {
             <em>法务 AI 能力</em>买单？
           </h1>
           <p>
-            追踪企业招聘官网、主流招聘平台与职业社交网站，
-            把分散岗位整理成可检索、可验证、可持续观察的市场情报。
+            追踪企业官网与公开招聘来源，将法律垂类和相邻 AI 岗位整理为
+            可检索、可回溯、标注核验时间的市场情报。
           </p>
         </div>
         <div className="metric-panel" aria-label="核心统计">
           <div className="primary-metric">
-            <span>本期有效信号</span>
-            <strong>{records.filter((job) => job.status !== "失效").length}</strong>
+            <span>已核验在招</span>
+            <strong>{recruitingCount}</strong>
             <small>条</small>
           </div>
           <div className="metric-row">
             <div>
-              <strong>19</strong>
-              <span>企业</span>
+              <strong>{companyCount}</strong>
+              <span>企业 / 机构</span>
             </div>
             <div>
-              <strong>23</strong>
-              <span>在招岗位</span>
+              <strong>{ROLE_FAMILIES.length}</strong>
+              <span>岗位族</span>
             </div>
             <div>
-              <strong>56%</strong>
-              <span>产品类</span>
+              <strong>{shenzhenCount}</strong>
+              <span>深圳信号</span>
             </div>
           </div>
         </div>
         <div className="signal-card">
-          <span className="signal-index">本周判断 01</span>
+          <span className="signal-index">本期判断 01</span>
           <p>
-            最新需求正在把法律专家直接嵌入
-            <strong>训练数据、事实核查与智能体评估闭环</strong>。
+            岗位正在分化为六条路径：内部应用、产品、交付、知识评测、
+            <strong>技术 FDE 与 AI 原生法务</strong>。
           </p>
         </div>
       </section>
@@ -797,18 +1007,18 @@ export default function Home() {
         ))}
         <div className="tab-note">
           {tab === "日报"
-            ? "今日新增 3 条重点信号"
+            ? `${dailyJobs.length} 条本期已核验信号`
             : tab === "趋势"
-              ? "近 30 日样本分析"
+              ? "基于当前公开样本"
               : "全库可检索条目"}
         </div>
       </nav>
 
       {tab === "趋势" ? (
-        <TrendView onSearch={() => setTab("库检索")} />
+        <TrendView jobs={records} onSearch={() => setTab("库检索")} />
       ) : tab === "日报" ? (
         <DailyView
-          jobs={records.slice(0, 3)}
+          jobs={dailyJobs.slice(0, 3)}
           onOpen={setSelected}
           onSearch={() => setTab("库检索")}
         />
@@ -833,36 +1043,70 @@ export default function Home() {
               <span>地区</span>
               <select value={city} onChange={(e) => setCity(e.target.value)}>
                 <option>全国</option>
+                <option>深圳</option>
                 <option>北京</option>
                 <option>上海</option>
-                <option>深圳</option>
                 <option>杭州</option>
                 <option>芜湖</option>
+                <option>大连</option>
               </select>
             </label>
             <label>
-              <span>类型</span>
-              <select
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              >
-                <option>全部岗位</option>
-                <option>产品</option>
-                <option>技术</option>
-                <option>运营</option>
+              <span>岗位族</span>
+              <select value={family} onChange={(e) => setFamily(e.target.value)}>
+                <option>全部岗位族</option>
+                {ROLE_FAMILIES.map((item) => (
+                  <option key={item}>{item}</option>
+                ))}
+                <option>市场信号</option>
               </select>
             </label>
             <label>
-              <span>热度</span>
-              <select
-                value={status}
-                onChange={(e) => setStatus(e.target.value)}
-              >
+              <span>状态</span>
+              <select value={status} onChange={(e) => setStatus(e.target.value)}>
                 <option>全部状态</option>
-                <option>热招</option>
-                <option>活跃</option>
-                <option>观察</option>
-                <option>失效</option>
+                <option>在招</option>
+                <option>待复核</option>
+                <option>已关闭</option>
+                <option>市场信号</option>
+              </select>
+            </label>
+            <label>
+              <span>经验</span>
+              <select
+                value={careerLevel}
+                onChange={(e) => setCareerLevel(e.target.value)}
+              >
+                <option>全部经验</option>
+                <option>校招 / 初级</option>
+                <option>中级</option>
+                <option>高级 / 专家</option>
+                <option>未公开</option>
+              </select>
+            </label>
+            <label>
+              <span>转型</span>
+              <select
+                value={audienceFit}
+                onChange={(e) => setAudienceFit(e.target.value)}
+              >
+                <option>全部背景</option>
+                <option>法律背景友好</option>
+                <option>交叉背景优先</option>
+                <option>技术背景优先</option>
+              </select>
+            </label>
+            <label>
+              <span>来源</span>
+              <select
+                value={sourceTier}
+                onChange={(e) => setSourceTier(e.target.value)}
+              >
+                <option>全部来源</option>
+                <option>企业官方</option>
+                <option>主流招聘平台</option>
+                <option>职业社交平台</option>
+                <option>公开转载</option>
               </select>
             </label>
           </section>
@@ -890,11 +1134,13 @@ export default function Home() {
                     <div className="job-content">
                       <div className="tags">
                         <span className="tag-country">国内</span>
-                        <span className="tag-category">{job.category}</span>
-                        <span className={`tag-status ${job.status}`}>
-                          {job.status}
+                        <span className="tag-category">{job.roleFamily}</span>
+                        <span className={`tag-status ${job.verificationState}`}>
+                          {job.verificationState}
                         </span>
-                        <span className="tag-new">新入库</span>
+                        <span className="tag-new">
+                          {job.added === "08-24" ? "本期新增" : job.relation}
+                        </span>
                       </div>
                       <button
                         className="job-title"
@@ -916,11 +1162,13 @@ export default function Home() {
                         <i />
                         <span>{job.salary}</span>
                         <i />
-                        <span>{job.experience}</span>
+                        <span>{job.careerLevel}</span>
                         <i />
-                        <span>{job.education}</span>
+                        <span>{job.audienceFit}</span>
                         <i />
-                        <span>页面 {job.date}</span>
+                        <span>{job.sourceTier}</span>
+                        <i />
+                        <span>最近核验 {job.verifiedAt}</span>
                       </div>
                       <p className="summary">{job.summary}</p>
                       <div className="scope-list">
@@ -955,8 +1203,11 @@ export default function Home() {
                       onClick={() => {
                         setQuery("");
                         setCity("全国");
-                        setCategory("全部岗位");
+                        setFamily("全部岗位族");
                         setStatus("全部状态");
+                        setCareerLevel("全部经验");
+                        setAudienceFit("全部背景");
+                        setSourceTier("全部来源");
                       }}
                     >
                       清除全部筛选
@@ -982,7 +1233,9 @@ export default function Home() {
                       <i>
                         <b
                           className={item.tone}
-                          style={{ width: `${(item.count / 13) * 100}%` }}
+                          style={{
+                            width: `${(item.count / Math.max(...sourceStats.map((source) => source.count))) * 100}%`,
+                          }}
                         />
                       </i>
                     </div>
@@ -995,17 +1248,11 @@ export default function Home() {
                   <span>高频能力词</span>
                   <small>TOP SKILLS</small>
                 </div>
-                {[
-                  ["Agent / 工作流", 11],
-                  ["合同管理", 10],
-                  ["知识库 / RAG", 9],
-                  ["合规风控", 10],
-                  ["评测与复核", 8],
-                ].map(([name, count], index) => (
+                {capabilityStats.map(({ name, count }, index) => (
                   <button
-                    key={String(name)}
+                    key={name}
                     onClick={() =>
-                      setQuery(String(name).split(" / ")[0].split("与")[0])
+                      setQuery(name.split(" / ")[0].split("与")[0])
                     }
                   >
                     <span>{String(index + 1).padStart(2, "0")}</span>
@@ -1019,7 +1266,7 @@ export default function Home() {
                 <span>研究说明</span>
                 <h3>这不是招聘搬运</h3>
                 <p>
-                  同一职位跨平台自动去重，保留可访问来源，再按统一规则提炼能力信号。发布日期、发现日期与核验时间分开记录。
+                  现阶段由维护者人工发现、去重和核验。每条记录保留来源层级与最近核验时间；无法确认仍在招聘时统一标记为“待复核”。
                 </p>
                 <button onClick={() => setShowMethod(true)}>
                   查看采集方法 →
@@ -1036,7 +1283,7 @@ export default function Home() {
           <strong>法律 AI 追踪</strong>
         </div>
         <p>
-          公开信息研究样例 · 数据仅用于行业观察，岗位状态请以原始招聘页面为准
+          人工维护的公开信息快照 · 不保证持续在招，投递前请再次打开原始来源核验
         </p>
         <span>© 2026 LEGAL AI INTELLIGENCE</span>
       </footer>
@@ -1058,7 +1305,7 @@ export default function Home() {
               ×
             </button>
             <span className="detail-kicker">
-              RECORD {String(selected.id).padStart(2, "0")} · {selected.category}
+              RECORD {String(selected.id).padStart(2, "0")} · {selected.roleFamily}
             </span>
             <h2>{selected.company}</h2>
             <h3>{selected.title}</h3>
@@ -1068,13 +1315,24 @@ export default function Home() {
                 <strong>{selected.city}</strong>
               </div>
               <div>
-                <span>薪资</span>
-                <strong>{selected.salary}</strong>
+                <span>机构类型</span>
+                <strong>{selected.employerType}</strong>
               </div>
               <div>
-                <span>经验</span>
-                <strong>{selected.experience}</strong>
+                <span>核验状态</span>
+                <strong>{selected.verificationState}</strong>
               </div>
+              <div>
+                <span>最近核验</span>
+                <strong>{selected.verifiedAt}</strong>
+              </div>
+            </div>
+            <div className="detail-section">
+              <span>门槛与来源</span>
+              <p>
+                {selected.salary} · {selected.experience} · {selected.education} ·
+                {selected.audienceFit} · {selected.sourceTier}
+              </p>
             </div>
             <div className="detail-section">
               <span>岗位摘要</span>
@@ -1117,7 +1375,7 @@ export default function Home() {
             >
               ×
             </button>
-            <span className="detail-kicker">METHODOLOGY · V1.0</span>
+            <span className="detail-kicker">METHODOLOGY · V1.1</span>
             <h2>这类看板是怎么做出来的？</h2>
             <ol className="method-steps">
               <li>
@@ -1125,8 +1383,8 @@ export default function Home() {
                 <div>
                   <strong>建立关键词组合</strong>
                   <p>
-                    公司名 × 法务 / 法律 / 合规 × AI / 大模型 / Agent /
-                    产品经理，通过搜索引擎发现公开页面。
+                    同时检索法律 AI、法务数智化、CLM、法律知识工程、模型评测、
+                    企业智能体、解决方案、实施顾问与客户成功，并对重点企业做反向检索。
                   </p>
                 </div>
               </li>
@@ -1152,18 +1410,18 @@ export default function Home() {
               <li>
                 <span>04</span>
                 <div>
-                  <strong>自动核验与信号研判</strong>
+                  <strong>人工核验与信号研判</strong>
                   <p>
-                    区分网页发布日期、发现日期和最后核验时间；自动检测重复、失效链接与疑似过期岗位，并生成带来源的研判摘要。
+                    区分网页发布日期、入库日期和最后核验日期。只有本期重新打开公开来源、仍能确认招聘的岗位才标记为“在招”；其余统一标记为“待复核”。
                   </p>
                 </div>
               </li>
             </ol>
             <div className="method-warning">
-              <strong>建议的最小可行方案</strong>
+              <strong>当前运行方式</strong>
               <p>
-                系统每天 08:00 与 14:00 自动执行搜索、去重、状态核验、摘要和发布。招聘网站条款、robots.txt
-                与个人信息保护要求仍优先于“抓得更多”。
+                当前版本是人工维护的阶段性快照，没有后台实时抓取或固定时点自动发布。
+                后续会在不绕过登录、验证码、robots.txt 与访问限制的前提下，逐步增加官方来源存活检测和更新提醒。
               </p>
             </div>
           </section>
@@ -1178,23 +1436,23 @@ function DailyView({
   onOpen,
   onSearch,
 }: {
-  jobs: Job[];
-  onOpen: (job: Job) => void;
+  jobs: EnrichedJob[];
+  onOpen: (job: EnrichedJob) => void;
   onSearch: () => void;
 }) {
   return (
     <section className="daily-view">
       <div className="daily-date">
         <span>2026</span>
-        <strong>08.04</strong>
-        <p>星期二 · 第 05 期</p>
+        <strong>08.24</strong>
+        <p>星期一 · 第 06 期</p>
       </div>
       <div className="daily-main">
         <span className="eyebrow">TODAY&apos;S BRIEFING</span>
-        <h2>今日法务 AI 招聘情报</h2>
+        <h2>本期已核验招聘情报</h2>
         <p className="daily-lead">
-          今天新增信号集中在法律知识工程、知识图谱推理、训练数据合规和智能体可靠性。
-          法律专家正在更早进入模型生产链路，头部律所也开始直接招聘博士级算法人才建设自有技术能力。
+          本期新增信号覆盖法律模型评测、企业级 Agent 产品、AI 原生法务以及
+          LegalTech 产品与客户成功。深圳机会不再只有资深产品岗，也出现了校招和交付型入口。
         </p>
         <div className="daily-cards">
           {dailyJobs.map((job, index) => (
@@ -1218,19 +1476,37 @@ function DailyView({
         <blockquote>
           “法律 AI 的生产门槛，正在从接入模型，升级为合规数据、可验证推理与完整项目交付。”
         </blockquote>
-        <small>基于本期 {jobs.length} 条公开信号的归纳判断</small>
+        <small>基于当前 {jobs.length} 条公开记录的归纳判断</small>
       </aside>
     </section>
   );
 }
 
-function TrendView({ onSearch }: { onSearch: () => void }) {
+function TrendView({
+  jobs: trendJobs,
+  onSearch,
+}: {
+  jobs: EnrichedJob[];
+  onSearch: () => void;
+}) {
+  const roleRecords = trendJobs.filter(
+    (job) => job.relation !== "市场信号" && job.verificationState !== "已关闭",
+  );
+  const roleDistribution = ROLE_FAMILIES.map((name) => {
+    const count = roleRecords.filter((job) => job.roleFamily === name).length;
+    return {
+      name,
+      count,
+      value: roleRecords.length ? Math.round((count / roleRecords.length) * 100) : 0,
+    };
+  }).sort((a, b) => b.count - a.count);
+
   return (
     <section className="trend-view">
       <div className="trend-head">
         <div>
-          <span className="eyebrow">30-DAY SIGNAL ANALYSIS</span>
-          <h2>能力需求正在向“平台化”集中</h2>
+          <span className="eyebrow">CURRENT SAMPLE ANALYSIS</span>
+          <h2>法律 AI 岗位正在分化为六条路径</h2>
         </div>
         <button className="method-button" onClick={onSearch}>
           返回条目库
@@ -1238,19 +1514,13 @@ function TrendView({ onSearch }: { onSearch: () => void }) {
       </div>
       <div className="trend-grid">
         <div className="chart-card">
-          <span>岗位核心能力提及率</span>
+          <span>六类岗位族样本占比</span>
           <div className="horizontal-chart">
-            {[
-              ["Agent / 工作流", 68],
-              ["合同管理", 60],
-              ["知识库 / RAG", 52],
-              ["合规风控", 56],
-              ["评测与复核", 36],
-            ].map(([name, value]) => (
-              <div key={String(name)}>
+            {roleDistribution.map(({ name, value, count }) => (
+              <div key={name}>
                 <p>
                   <span>{name}</span>
-                  <strong>{value}%</strong>
+                  <strong>{count} · {value}%</strong>
                 </p>
                 <i>
                   <b style={{ width: `${value}%` }} />
@@ -1281,18 +1551,18 @@ function TrendView({ onSearch }: { onSearch: () => void }) {
         </div>
         <div className="trend-note">
           <span>研究结论 / 01</span>
-          <h3>产品经理仍是最密集的岗位类型</h3>
+          <h3>产品只是入口之一，不再等同于整个市场</h3>
           <p>
-            样本中的产品岗不只写 PRD，更需要理解法务流程、数据治理、模型边界和跨部门落地。
-            复合型“法律 × 产品 × AI”能力正在成为核心门槛。
+            企业内部应用、LegalTech 产品、解决方案交付、知识工程评测、技术 FDE
+            和 AI 原生法务对应不同门槛。按岗位族检索，比只搜“法律 AI 产品经理”更完整。
           </p>
         </div>
         <div className="trend-note gold">
           <span>研究结论 / 02</span>
-          <h3>评测、复核与引用溯源开始进入职责</h3>
+          <h3>法律背景正在模型生产与采用两端创造价值</h3>
           <p>
-            法律场景容错率低。事实核查、错误分级、人工复核和证据溯源被明确写入职位，
-            标志着行业从 Demo 能力进入生产级可靠性建设。
+            一端是 Rubric、标注、事实核查和模型评测，另一端是需求访谈、产品采用、
+            培训和客户成功。两端都需要把专业判断转化为组织可复用的方法。
           </p>
         </div>
       </div>

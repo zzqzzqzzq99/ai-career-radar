@@ -361,7 +361,7 @@ main {
   margin: 0 auto;
   padding: 22px clamp(22px, 4vw, 68px);
   display: grid;
-  grid-template-columns: minmax(360px, 1fr) repeat(3, minmax(120px, 165px));
+  grid-template-columns: minmax(280px, 1.5fr) repeat(3, minmax(140px, 0.7fr));
   gap: 10px;
   border-bottom: 1px solid var(--line);
 }
@@ -542,6 +542,22 @@ main {
 
 .tag-status.失效 {
   background: #5d4b47;
+}
+
+.tag-status.在招 {
+  background: #46745d;
+}
+
+.tag-status.待复核 {
+  background: #8b7441;
+}
+
+.tag-status.已关闭 {
+  background: #5d4b47;
+}
+
+.tag-status.市场信号 {
+  background: #6f7580;
 }
 
 .tag-new {
@@ -913,7 +929,7 @@ footer > span {
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--line);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .detail-facts div {
@@ -1419,10 +1435,6 @@ footer > span {
     grid-column: 1 / -1;
   }
 
-  .filters > label:last-child {
-    grid-column: 1 / -1;
-  }
-
   .content-grid {
     grid-template-columns: 1fr;
   }
@@ -1488,8 +1500,7 @@ footer > span {
     grid-template-columns: 1fr;
   }
 
-  .search-box,
-  .filters > label:last-child {
+  .search-box {
     grid-column: auto;
   }
 
