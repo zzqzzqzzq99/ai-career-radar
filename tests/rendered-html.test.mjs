@@ -65,3 +65,24 @@ test("keeps source links and collection boundaries explicit", async () => {
   assert.equal(manifest.name, "legal-ai-job-tracker");
   assert.equal(manifest.license, "MIT");
 });
+
+test("builds a GitHub Pages mirror with repository-relative assets", async () => {
+  const [html, pageSource, workflow, readme] = await Promise.all([
+    readFile(new URL("../pages-dist/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(
+      new URL("../.github/workflows/pages.yml", import.meta.url),
+      "utf8",
+    ),
+    readFile(new URL("../README.md", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /\/legal-ai-job-tracker\/assets\//);
+  assert.match(html, /hermes-nomos\.github\.io\/legal-ai-job-tracker/);
+  assert.match(pageSource, /hostname\.endsWith\("\.github\.io"\)/);
+  assert.match(workflow, /actions\/deploy-pages@v4/);
+  assert.match(
+    readme,
+    /https:\/\/hermes-nomos\.github\.io\/legal-ai-job-tracker\//,
+  );
+});

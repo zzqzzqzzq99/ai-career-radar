@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/hermes-nomos/legal-ai-job-tracker.git"
   },
-  "homepage": "https://legal-ai-talent-radar.zhangzhuoqun70.chatgpt.site",
+  "homepage": "https://hermes-nomos.github.io/legal-ai-job-tracker/",
   "keywords": [
     "legal-ai",
     "legal-tech",
@@ -22,9 +22,10 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
+    "build:pages": "vite build --config vite.pages.config.ts",
     "start": "vinext start",
-    "test": "vinext build && node --test tests/rendered-html.test.mjs",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
+    "test": "vinext build && vite build --config vite.pages.config.ts && node --test tests/rendered-html.test.mjs",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern pages-dist --ignore-pattern .next"
   },
   "dependencies": {
     "next": "16.3.2",

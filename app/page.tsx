@@ -593,6 +593,9 @@ const sourceStats = [
 ];
 
 export default function Home() {
+  const isGitHubPages =
+    typeof window !== "undefined" &&
+    window.location.hostname.endsWith(".github.io");
   const [tab, setTab] = useState<"日报" | "库检索" | "趋势">("库检索");
   const [records, setRecords] = useState<Job[]>(jobs);
   const [query, setQuery] = useState("");
@@ -603,7 +606,11 @@ export default function Home() {
   const [bookmarks, setBookmarks] = useState<number[]>([]);
   const [showMethod, setShowMethod] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
-  const [refreshNote, setRefreshNote] = useState("本轮新增 5 条 · 更新 0 条 · 失效 2 条");
+  const [refreshNote, setRefreshNote] = useState(() =>
+    isGitHubPages
+      ? "GitHub Pages 公开版 · 岗位状态以来源页面为准"
+      : "本轮新增 5 条 · 更新 0 条 · 失效 2 条",
+  );
   const [lastUpdated, setLastUpdated] = useState("08-04 14:17");
 
   const filtered = useMemo(() => {
@@ -639,6 +646,10 @@ export default function Home() {
 
   const refreshNow = async () => {
     if (refreshing) return;
+    if (isGitHubPages) {
+      setRefreshNote("静态公开版不执行实时抓取，请打开岗位来源核验最新状态");
+      return;
+    }
     setRefreshing(true);
     setRefreshNote("正在搜索公开招聘源…");
     try {
@@ -702,8 +713,20 @@ export default function Home() {
           </span>
           <button
             className={`icon-button ${refreshing ? "refreshing" : ""}`}
-            aria-label={refreshing ? "正在刷新数据" : "立即刷新数据"}
-            title={refreshing ? "正在搜索公开招聘源" : "立即实时刷新"}
+            aria-label={
+              isGitHubPages
+                ? "查看静态版数据说明"
+                : refreshing
+                  ? "正在刷新数据"
+                  : "立即刷新数据"
+            }
+            title={
+              isGitHubPages
+                ? "GitHub Pages 静态版：点击查看数据说明"
+                : refreshing
+                  ? "正在搜索公开招聘源"
+                  : "立即实时刷新"
+            }
             onClick={refreshNow}
             disabled={refreshing}
           >

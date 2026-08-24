@@ -2,9 +2,9 @@
 
 一个面向法律 AI 从业者、转型者和招聘研究者的公开招聘信号看板。项目把分散在企业招聘官网、招聘平台和职业社交网站中的岗位，整理为可搜索、可筛选、可回溯来源的结构化样本，并进一步提炼岗位背后的能力需求。
 
-## [→ 在线打开看板](https://legal-ai-talent-radar.zhangzhuoqun70.chatgpt.site)
+## [→ 在线打开看板](https://hermes-nomos.github.io/legal-ai-job-tracker/)
 
-无需注册或登录，使用电脑或手机浏览器即可直接访问。
+GitHub Pages 公开版无需注册或登录，使用电脑或手机浏览器即可直接访问。完整动态版保留在 [备用地址](https://legal-ai-talent-radar.zhangzhuoqun70.chatgpt.site)。
 
 ![法律 AI 招聘情报看板预览](./public/og.png)
 
