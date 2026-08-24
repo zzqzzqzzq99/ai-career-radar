@@ -66,6 +66,8 @@ main {
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  min-width: 0;
+  flex: 0 1 auto;
 }
 
 .brand-mark {
@@ -103,13 +105,21 @@ main {
 .header-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 10px;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .updated {
   color: var(--muted);
   font-size: 11px;
   margin-right: 10px;
+  min-width: 0;
+  max-width: 48vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .updated i {
@@ -134,6 +144,22 @@ main {
 .icon-button {
   width: 36px;
   font-size: 21px;
+}
+
+.refresh-button {
+  width: auto;
+  min-width: 68px;
+  padding: 0 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.refresh-button b {
+  font-size: 11px;
+  letter-spacing: 0.04em;
 }
 
 .icon-button span {
@@ -1489,6 +1515,15 @@ footer > span {
 
   .method-button {
     padding: 0 10px;
+  }
+
+  .refresh-button {
+    min-width: 36px;
+    padding: 0;
+  }
+
+  .refresh-button b {
+    display: none;
   }
 
   .hero-grid,

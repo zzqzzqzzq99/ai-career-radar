@@ -1040,13 +1040,14 @@ export default function Home() {
             <i /> 自动更新 {autoUpdatedLabel} · {autoNote}
           </span>
           <button
-            className={`icon-button ${refreshing ? "refreshing" : ""}`}
+            className={`icon-button refresh-button ${refreshing ? "refreshing" : ""}`}
             aria-label="重新载入最新自动数据"
             title="重新载入最近一次定时检索结果"
             onClick={() => void loadAutoFeed(true)}
             disabled={refreshing}
           >
             <span aria-hidden="true">↻</span>
+            <b>{refreshing ? "载入中" : "刷新"}</b>
           </button>
           <button
             className="method-button"
