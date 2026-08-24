@@ -5,7 +5,8 @@ const title = "法律 AI 追踪｜招聘情报看板";
 const description =
   "追踪企业法务 AI、法律科技、合规智能体岗位与能力趋势的公开招聘情报库。";
 const metadataBase = new URL(
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  process.env.NEXT_PUBLIC_SITE_URL ??
+    "https://legal-ai-talent-radar.zhangzhuoqun70.chatgpt.site",
 );
 
 export const metadata: Metadata = {
