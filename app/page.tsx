@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import GlobalRadar from "./global-radar";
 
 type Job = {
   id: number;
@@ -1029,10 +1030,10 @@ export default function Home() {
           <span className="brand-mark" aria-hidden="true" />
           <div>
             <div className="brand-line">
-              <strong>法律 AI 追踪</strong>
-              <span className="edition">LEGAL INTELLIGENCE · 2026</span>
+              <strong>AI 转型求职雷达</strong>
+              <span className="edition">AI CAREER INTELLIGENCE · 2026</span>
             </div>
-            <p>从公开招聘信号，看企业法务 AI 正在如何落地</p>
+            <p>从公开招聘信息判断岗位、门槛与转行路径</p>
           </div>
         </div>
         <div className="header-actions">
@@ -1058,7 +1059,8 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="hero-grid">
+      <GlobalRadar />
+      <section className="hero-grid" id="domestic-history">
         <div className="hero-copy">
           <span className="eyebrow">LEGAL × AI · TALENT SIGNALS</span>
           <h1>

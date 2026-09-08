@@ -1,16 +1,17 @@
 {
-  "name": "legal-ai-job-tracker",
-  "version": "0.2.0",
-  "description": "面向法律 AI 从业者与转型者的公开招聘信号看板。",
+  "name": "ai-career-radar",
+  "version": "0.3.0",
+  "description": "面向法律人及其他行业转型者的公开 AI 招聘情报看板。",
   "private": true,
   "license": "MIT",
   "author": "Zhuoqun Zhang",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hermes-nomos/legal-ai-job-tracker.git"
+    "url": "https://github.com/zzqzzqzzq99/ai-career-radar.git"
   },
-  "homepage": "https://hermes-nomos.github.io/legal-ai-job-tracker/",
+  "homepage": "https://zzqzzqzzq99.github.io/ai-career-radar/",
   "keywords": [
+    "ai-career",
     "legal-ai",
     "legal-tech",
     "job-tracker",
@@ -23,9 +24,9 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "build:pages": "vite build --config vite.pages.config.ts",
-    "refresh:jobs": "node scripts/refresh-jobs.mjs",
+    "refresh:jobs": "node scripts/refresh-jobs.mjs && node scripts/refresh-global.mjs",
     "start": "vinext start",
-    "test": "vinext build && vite build --config vite.pages.config.ts && node --test tests/rendered-html.test.mjs",
+    "test": "vinext build && vite build --config vite.pages.config.ts && node --test tests/*.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern pages-dist --ignore-pattern .next"
   },
   "dependencies": {

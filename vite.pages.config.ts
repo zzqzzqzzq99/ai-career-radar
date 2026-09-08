@@ -6,7 +6,7 @@ const projectRoot = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig({
   root: fileURLToPath(new URL("./static", import.meta.url)),
-  base: "/legal-ai-job-tracker/",
+  base: "/ai-career-radar/",
   publicDir: fileURLToPath(new URL("./public", import.meta.url)),
   plugins: [react()],
   build: {

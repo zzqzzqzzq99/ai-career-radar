@@ -1,9 +1,11 @@
-/** Cloudflare Worker entry point for the legal AI job tracker. */
+/** Cloudflare Worker entry point for the AI career radar. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
 
 interface Env {
-  ASSETS: Fetcher;
+  ASSETS: {
+    fetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
+  };
   IMAGES: {
     input(stream: ReadableStream): {
       transform(options: Record<string, unknown>): {

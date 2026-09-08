@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/jobs-auto.json
+          git add public/jobs-auto.json public/jobs-global-auto.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh automated job feed"
             git push origin HEAD:main

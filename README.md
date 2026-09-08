@@ -1,8 +1,14 @@
-# 法律 AI 招聘情报看板
+# AI 转型求职雷达
 
-一个面向法律 AI 从业者、转型者和招聘研究者的公开招聘信号看板。项目把分散在企业招聘官网、招聘平台和职业社交网站中的岗位，整理为可搜索、可筛选、可回溯来源的结构化样本，并进一步提炼岗位背后的能力需求。
+一个帮助法律人和其他行业从业者寻找 AI 工作的公开招聘情报工具。项目把分散在企业招聘官网和公开招聘平台的信息整理为可搜索、可筛选、可回溯的线索，并把“看起来相关”继续拆成地点资格、硬门槛、合作形式、适配理由和待确认问题。法律 AI 是当前资料最完整的示范赛道。
 
-## [→ 在线打开看板](https://hermes-nomos.github.io/legal-ai-job-tracker/)
+## 项目定位
+
+首页提供面向中国大陆常住候选人的全球机会研究区：按个人背景、机构、合作形式和大陆适用性筛选，显示匹配证据与缺口，支持本机收藏和复制 AI 研究任务。研究记录包含具体岗位、人才库、机构入口及排除项，不能全部当成在招空缺。
+
+国际采集程序读取 Welo Data、RWS、BJAK 的公开招聘接口，提取地点明确包含 China 的 AI 与相邻岗位；自动条目仅为线索，不以列表地点代替正文资格核对。GitHub Actions 每日两次更新公开数据并重新部署。AI 研究结论由使用者自己的工具生成，网页未接入后台付费模型。私人简历与联系方式不进入公开源码。
+
+## [→ 在线打开看板](https://zzqzzqzzq99.github.io/ai-career-radar/)
 
 GitHub Pages 公开版无需注册或登录，使用电脑或手机浏览器即可直接访问，也是本项目面向中国大陆用户的主入口。
 
@@ -36,8 +42,8 @@ GitHub Pages 公开版无需注册或登录，使用电脑或手机浏览器即�
 环境要求：Node.js `>=22.13.0`。
 
 ```bash
-git clone https://github.com/hermes-nomos/legal-ai-job-tracker.git
-cd legal-ai-job-tracker
+git clone https://github.com/zzqzzqzzq99/ai-career-radar.git
+cd ai-career-radar
 npm install
 npm run dev
 ```
@@ -55,11 +61,15 @@ npm test
 
 ```text
 app/page.tsx                看板页面、内置岗位样本与交互
+app/global-radar.tsx        通用 AI 转型机会区与筛选交互
+app/public-opportunities.json 人工研究的公开机会、入口与排除记录
 app/api/refresh/route.ts    未接入公开页面的实验性检索接口
 app/globals.css             页面样式与响应式布局
 app/layout.tsx              页面元信息与社交分享配置
 scripts/refresh-jobs.mjs    无密钥的公开网页定时检索、筛选与去重脚本
+scripts/refresh-global.mjs  企业官方招聘接口的国际机会采集脚本
 public/jobs-auto.json       最近一次自动检索生成的岗位数据
+public/jobs-global-auto.json 最近一次国际官方来源采集结果
 .github/workflows/pages.yml 每日两次刷新并发布 GitHub Pages
 public/og.png               社交分享预览图
 tests/                      构建产物与数据边界测试
@@ -103,4 +113,4 @@ tests/                      构建产物与数据边界测试
 
 ## 维护者
 
-[hermes-nomos](https://github.com/hermes-nomos) · Legal AI / Product / Law
+[zzqzzqzzq99](https://github.com/zzqzzqzzq99) · AI Product / Legal AI / Law

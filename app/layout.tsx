@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const title = "法律 AI 追踪｜招聘情报看板";
+const title = "AI 转型求职雷达｜公开招聘情报看板";
 const description =
-  "按六类岗位族追踪法律 AI、法务数智化、知识评测与相邻智能体岗位，并标注来源层级和最近核验时间。";
+  "帮助法律人和其他行业从业者按背景、地点与合作形式检索 AI 岗位，并追踪法律 AI、专业评测、产品和交付机会。";
 const metadataBase = new URL(
   process.env.NEXT_PUBLIC_SITE_URL ??
-    "https://hermes-nomos.github.io/legal-ai-job-tracker/",
+    "https://zzqzzqzzq99.github.io/ai-career-radar/",
 );
 
 export const metadata: Metadata = {
