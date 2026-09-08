@@ -38,6 +38,7 @@ jobs:
           git add public/jobs-auto.json public/jobs-global-auto.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh automated job feed"
+            git pull --rebase origin main
             git push origin HEAD:main
           fi
       - name: Build static site
