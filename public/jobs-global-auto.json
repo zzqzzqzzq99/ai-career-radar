@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-08T12:13:57.304Z",
-  "lastAttemptAt": "2026-09-08T12:13:57.304Z",
+  "generatedAt": "2026-09-09T00:16:34.368Z",
+  "lastAttemptAt": "2026-09-09T00:16:34.368Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-09-08T12:13:57.304Z",
+      "checkedAt": "2026-09-09T00:16:34.368Z",
       "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-09-08T12:13:57.304Z",
+      "checkedAt": "2026-09-09T00:16:34.368Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-09-08T12:13:57.304Z",
+      "checkedAt": "2026-09-09T00:16:34.368Z",
       "ok": true
     }
   ],
@@ -52,14 +52,6 @@
       "location": "South Korea / South Korea / Japan / Remote / China",
       "kind": "Freelance",
       "url": "https://jobs.lever.co/weloglobal/25117686-ddaa-4e8b-9fb7-cb5f5aae9261",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "Welo Data",
-      "title": "Non-Linguistic Quality Control Specialists (China)",
-      "location": "Beijing, China / Beijing, China / Remote, Worldwide",
-      "kind": "Remote",
-      "url": "https://jobs.lever.co/weloglobal/1af55554-dad4-48ad-97ca-6550fab8cf4c",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
