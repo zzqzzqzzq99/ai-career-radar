@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-13T05:17:11.920Z",
-  "lastAttemptAt": "2026-09-13T05:17:11.920Z",
+  "generatedAt": "2026-09-13T05:32:57.110Z",
+  "lastAttemptAt": "2026-09-13T05:32:57.110Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-09-13T05:17:11.920Z",
-      "ok": false
+      "checkedAt": "2026-09-13T05:32:57.110Z",
+      "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-09-13T05:17:11.920Z",
-      "ok": false
+      "checkedAt": "2026-09-13T05:32:57.110Z",
+      "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-09-13T05:17:11.920Z",
+      "checkedAt": "2026-09-13T05:32:57.110Z",
       "ok": true
     }
   ],
@@ -44,22 +44,6 @@
       "location": "Taiwan / Taiwan / Malaysia / Singapore / Indonesia / China",
       "kind": "Freelance-Remote",
       "url": "https://jobs.lever.co/weloglobal/60e35ef5-b3d7-4e95-867c-af67d294ccc4",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "Welo Data",
-      "title": "Generative AI Senior Linguist - Chinese Variants",
-      "location": "Taiwan / Taiwan / Malaysia / Indonesia / Singapore / United States / China",
-      "kind": "Freelance",
-      "url": "https://jobs.lever.co/weloglobal/56758846-5fc8-4d28-9341-bb342c434ed5",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "Welo Data",
-      "title": "Non-Linguistic Quality Control Specialists (China)",
-      "location": "Beijing, China / Beijing, China / Remote, Worldwide",
-      "kind": "Remote",
-      "url": "https://jobs.lever.co/weloglobal/1af55554-dad4-48ad-97ca-6550fab8cf4c",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
