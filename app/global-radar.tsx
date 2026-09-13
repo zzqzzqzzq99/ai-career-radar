@@ -1,50 +1,138 @@
 "use client";
-import { useState } from "react";
-import initial from "./public-opportunities.json";
+
+import { useCallback, useEffect, useMemo, useState } from "react";
+import research from "./public-opportunities.json";
+
+type LiveJob = { title: string; url: string; company: string; location: string; kind: string; eligibility: string };
+type Feed = { generatedAt?: string; items?: LiveJob[] };
+type DomesticJob = { id: number; title: string; sourceUrl: string; company: string; city: string; source: string; salary?: string; experience?: string };
+type DomesticFeed = { generatedAt?: string; items?: DomesticJob[] };
+type Stage = "未跟进" | "待研究" | "准备投递" | "已投递" | "面试中" | "结束";
+type Opportunity = { id: string; company: string; title: string; url: string; location: string; kind: string; eligibility: string; fit: string; gap: string; evidence: string; next: string; source: "研究记录" | "自动发现" };
+
+const stageOptions: Stage[] = ["未跟进", "待研究", "准备投递", "已投递", "面试中", "结束"];
+const targetPattern = /legal|法律|法务|合规|合同|AI product|AI 产品|solution|解决方案|implementation|实施|workflow|工作流|evaluation|评测|trainer|训练|quality|质量|customer success|客户成功|founder/i;
+const technicalPattern = /engineer|developer|算法|工程师|开发|full stack|backend|frontend|NLP/i;
+
+function score(record: Opportunity, audience: string) {
+  const text = `${record.title} ${record.fit} ${record.evidence}`;
+  let value = targetPattern.test(text) ? 4 : 0;
+  if (/legal|法律|法务|合规|合同/i.test(text)) value += audience === "法律与AI应用" ? 5 : 2;
+  if (/solution|解决方案|implementation|实施|workflow|工作流|product|产品|evaluation|评测|quality|质量/i.test(text)) value += 3;
+  if (["大陆可远程", "大陆办公"].includes(record.eligibility)) value += 3;
+  if (record.kind === "全职") value += 2;
+  if (technicalPattern.test(record.title) && audience !== "技术开发") value -= 4;
+  if (record.eligibility === "不适用") value -= 20;
+  return value;
+}
+
+function readStages(): Record<string, Stage> {
+  if (typeof window === "undefined") return {};
+  try { return JSON.parse(localStorage.getItem("career-radar-stages") || "{}"); } catch { return {}; }
+}
 
 export default function GlobalRadar() {
   const [query, setQuery] = useState("");
-  const [region, setRegion] = useState("全部");
-  const [kind, setKind] = useState("全部");
+  const [audience, setAudience] = useState("法律与AI应用");
   const [eligibility, setEligibility] = useState("可探索");
-  const [audience, setAudience] = useState("法律人转AI");
-  const [message, setMessage] = useState("");
-  const [live, setLive] = useState<{title:string;url:string;company:string;location:string;kind:string}[]>([]);
-  const [feedDate,setFeedDate] = useState("");
-  const [saved, setSaved] = useState<string[]>(()=>{
-    if (typeof window === "undefined") return [];
-    try {return JSON.parse(localStorage.getItem("global-radar-saved")||"[]");}catch{return [];}
-  });
-  async function refresh(){
-    try {const base=location.pathname.includes("/ai-career-radar")?"/ai-career-radar/":"/";
-      const r=await fetch(`${base}jobs-global-auto.json?t=${Date.now()}`,{cache:"no-store"});
-      if(!r.ok) throw new Error(); const data=await r.json();setLive(data.items||[]);setFeedDate(data.generatedAt||"");setMessage("已载入已保存的检索结果；不会触发全网搜索。");
-    } catch {setMessage("自动来源暂不可用，下方研究清单仍可使用。");}
+  const [source, setSource] = useState("全部来源");
+  const [stageFilter, setStageFilter] = useState("全部进度");
+  const [live, setLive] = useState<LiveJob[]>([]);
+  const [domestic, setDomestic] = useState<DomesticJob[]>([]);
+  const [feedDate, setFeedDate] = useState("");
+  const [message, setMessage] = useState("正在载入最新公开岗位");
+  const [stages, setStages] = useState<Record<string, Stage>>(readStages);
+
+  const loadFeed = useCallback(async () => {
+    try {
+      const base = window.location.pathname.includes("/ai-career-radar") ? "/ai-career-radar/" : "/";
+      const stamp = Date.now();
+      const read = async <T,>(file: string) => {
+        const response = await fetch(`${base}${file}?t=${stamp}`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`${file}: HTTP ${response.status}`);
+        return response.json() as Promise<T>;
+      };
+      const [globalResult, domesticResult] = await Promise.allSettled([
+        read<Feed>("jobs-global-auto.json"),
+        read<DomesticFeed>("jobs-auto.json"),
+      ]);
+      if (globalResult.status === "rejected" && domesticResult.status === "rejected") throw new Error("all feeds failed");
+      const globalData = globalResult.status === "fulfilled" ? globalResult.value : {};
+      const domesticData = domesticResult.status === "fulfilled" ? domesticResult.value : {};
+      const globalItems = Array.isArray(globalData.items) ? globalData.items : [];
+      const domesticItems = Array.isArray(domesticData.items) ? domesticData.items : [];
+      setLive(globalItems);
+      setDomestic(domesticItems);
+      const timestamps = [globalData.generatedAt, domesticData.generatedAt].filter(Boolean) as string[];
+      setFeedDate(timestamps.sort((a, b) => Date.parse(b) - Date.parse(a))[0] || "");
+      setMessage(`已载入 ${domesticItems.length} 条国内、${globalItems.length} 条国际官方源线索`);
+    } catch { setMessage("最新自动数据暂时无法载入，人工研究记录仍可使用"); }
+  }, []);
+
+  useEffect(() => { const timer = window.setTimeout(() => void loadFeed(), 0); return () => window.clearTimeout(timer); }, [loadFeed]);
+
+  const records = useMemo<Opportunity[]>(() => {
+    const studied = research.map(item => ({ id: item.id, company: item.company, title: item.title, url: item.url, location: item.region, kind: item.kind, eligibility: item.eligibility, fit: item.fit, gap: item.gap, evidence: item.evidence, next: item.next, source: "研究记录" as const }));
+    const globalAutomatic = live.map(item => ({ id: item.url, company: item.company, title: item.title, url: item.url, location: item.location, kind: item.kind, eligibility: item.eligibility, fit: "企业官方招聘接口发现的公开职位，请结合职责和个人经历判断。", gap: "尚未人工核对经验、语言、薪酬、签约主体与中国大陆工作资格。", evidence: `官方列表地点：${item.location || "未注明"}。`, next: "打开原始职位，先核对硬门槛和地点资格。", source: "自动发现" as const }));
+    const domesticAutomatic = domestic.map(item => ({ id: String(item.id), company: item.company, title: item.title, url: item.sourceUrl, location: item.city || "中国大陆", kind: "公开职位", eligibility: "大陆办公", fit: "国内公开招聘页面发现的法律 AI 相关职位，可直接核对职责与申请要求。", gap: "尚未人工核对在招状态、团队实际职责及个人匹配证据。", evidence: `${item.source || "公开招聘页"}标注地点：${item.city || "未注明"}${item.salary ? `，薪资：${item.salary}` : ""}${item.experience ? `，经验：${item.experience}` : ""}。`, next: "打开原始职位，核对在招状态和岗位硬门槛。", source: "自动发现" as const }));
+    const seen = new Set<string>();
+    return [...studied, ...domesticAutomatic, ...globalAutomatic].filter(item => { if (!item.url) return false; const key = item.url.toLowerCase().replace(/[?#].*$/, ""); if (seen.has(key)) return false; seen.add(key); return true; });
+  }, [live, domestic]);
+
+  const visible = useMemo(() => records
+    .filter(item => audience === "技术开发" || score(item, audience) > 0)
+    .filter(item => eligibility === "全部" || (eligibility === "可探索" ? item.eligibility !== "不适用" : item.eligibility === eligibility))
+    .filter(item => source === "全部来源" || item.source === source)
+    .filter(item => stageFilter === "全部进度" || (stages[item.id] || "未跟进") === stageFilter)
+    .filter(item => JSON.stringify(item).toLowerCase().includes(query.trim().toLowerCase()))
+    .sort((a, b) => score(b, audience) - score(a, audience)), [records, eligibility, source, stageFilter, stages, query, audience]);
+
+  const displayed = useMemo(() => {
+    const perEmployer = new Map<string, number>();
+    return visible.filter(item => {
+      const count = perEmployer.get(item.company) || 0;
+      if (count >= 5) return false;
+      perEmployer.set(item.company, count + 1);
+      return true;
+    }).slice(0, 40);
+  }, [visible]);
+
+  function updateStage(id: string, stage: Stage) {
+    const next = { ...stages, [id]: stage }; setStages(next);
+    try { localStorage.setItem("career-radar-stages", JSON.stringify(next)); } catch { setMessage("浏览器未允许保存，进度只在本次页面有效"); }
   }
-  function bookmark(id:string){const next=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];setSaved(next);try{localStorage.setItem("global-radar-saved",JSON.stringify(next));}catch{setMessage("浏览器未允许保存，本次收藏仅在页面内有效。");}}
-  const visible=initial.filter(j=>(audience==="全部"||j.audiences.includes(audience))&&(region==="全部"||j.region===region)&&(kind==="全部"||j.kind===kind)&&(eligibility==="全部"||(eligibility==="可探索"?j.eligibility!=="不适用":j.eligibility===eligibility))&&JSON.stringify(j).toLowerCase().includes(query.toLowerCase()));
-  async function copyBrief(j:typeof initial[number]){
-    const text=`请研究这个岗位：${j.title}，${j.company}，${j.url}。我的背景类型是“${audience}”。请先读取最新原始JD，核对地区、合同类型、经验、语言、工时与薪酬；区分事实和推断。先向我询问必要的履历信息，再给出匹配证据、缺口和应询问的问题。不要虚构履历，不要代为投递。当前公开记录：${j.evidence}；${j.gap}`;
-    try{await navigator.clipboard.writeText(text);setMessage("已复制研究任务，可交给你的AI继续核对最新JD。");}catch{setMessage("复制失败，请从原始来源手动复制链接。");}
+
+  async function copyBrief(item: Opportunity) {
+    const text = `请评估这个职位：${item.title}，${item.company}，${item.url}。我的目标背景是“${audience}”。先读取最新原始JD，核对地点资格、合同形式、经验、语言、工时和薪酬；再向我询问必要履历，给出匹配证据、缺口、面试故事和下一步。不要虚构经历。当前线索：${item.evidence} ${item.gap}`;
+    try { await navigator.clipboard.writeText(text); setMessage("已复制职位研究任务"); } catch { setMessage("复制失败，请手动复制职位链接"); }
   }
+
+  const activeCount = Object.values(stages).filter(value => ["准备投递", "已投递", "面试中"].includes(value)).length;
+  const employerCount = new Set(records.map(item => item.company)).size;
+
   return <section className="global-radar" aria-labelledby="global-heading">
-    <div className="global-top"><div><p className="eyebrow">AI CAREER RADAR · PUBLIC SOURCES</p><h1 id="global-heading">从原行业出发，寻找 AI 工作</h1><p>面向法律人和其他转行者，先核对工作地点与硬门槛，再比较岗位内容和职业价值。</p></div><a href="#domestic-history">法律AI历史库 ↓</a></div>
-    <div className="global-tools">
-      <label>搜索<input value={query} onChange={e=>setQuery(e.target.value)} placeholder="公司、岗位、能力"/></label>
-      <label>我的背景<select value={audience} onChange={e=>setAudience(e.target.value)}>{["法律人转AI","其他行业转AI","已有AI经验","全部"].map(v=><option key={v}>{v}</option>)}</select></label>
-      <label>机构<select value={region} onChange={e=>setRegion(e.target.value)}>{["全部","境外企业","国内企业"].map(v=><option key={v}>{v}</option>)}</select></label>
-      <label>合作形式<select value={kind} onChange={e=>setKind(e.target.value)}>{["全部","全职","项目制","人才库","机构观察"].map(v=><option key={v}>{v}</option>)}</select></label>
-      <label>大陆适用性<select value={eligibility} onChange={e=>setEligibility(e.target.value)}>{["可探索","大陆可远程","大陆办公","待确认","不适用","全部"].map(v=><option key={v}>{v}</option>)}</select></label>
+    <div className="global-top">
+      <div><p className="eyebrow">AI CAREER RADAR · 机会收件箱</p><h1 id="global-heading">今天，先看最值得行动的机会</h1><p>最新公开岗位与人工研究记录统一排序。选择你的背景，先排除地点和硬门槛，再决定下一步。</p></div>
+      <div className="radar-summary"><strong>{visible.length}</strong><span>当前结果</span><strong>{employerCount}</strong><span>家机构</span><strong>{activeCount}</strong><span>条在推进</span></div>
     </div>
-    <p className="global-note">研究日期 2026-09-07 · {visible.length} 条结果 · 这是基于公开信息的职业线索；人才库和机构入口不计为确定空缺。</p>
-    <div className="global-cards">{visible.map(j=><article key={j.id}>
-      <div className="global-meta"><span>{j.company}</span><span>{j.kind} · {j.eligibility}</span></div>
-      <h2><a href={j.url} target="_blank" rel="noreferrer">{j.title} ↗</a></h2><p>{j.fit}</p>
-      <p><b>门槛与缺口：</b>{j.gap}</p><details><summary>查看证据与下一步</summary><p>{j.evidence}</p><p>{j.next}</p><p>报酬：{j.pay}；来源核对：{j.checked}；{j.stage}</p></details>
-      <div className="global-card-actions"><button onClick={()=>bookmark(j.id)} aria-pressed={saved.includes(j.id)}>{saved.includes(j.id)?"已收藏":"收藏"}</button><button onClick={()=>copyBrief(j)}>复制 AI 研究任务</button></div>
+    <div className="global-tools">
+      <label className="wide">搜索<input value={query} onChange={event => setQuery(event.target.value)} placeholder="岗位、公司、法律、评测、解决方案……" /></label>
+      <label>我的方向<select value={audience} onChange={event => setAudience(event.target.value)}><option>法律与AI应用</option><option>产品与解决方案</option><option>专业领域转AI</option><option>技术开发</option></select></label>
+      <label>大陆适用性<select value={eligibility} onChange={event => setEligibility(event.target.value)}>{["可探索", "大陆可远程", "大陆办公", "待确认", "不适用", "全部"].map(value => <option key={value}>{value}</option>)}</select></label>
+      <label>信息来源<select value={source} onChange={event => setSource(event.target.value)}><option>全部来源</option><option>研究记录</option><option>自动发现</option></select></label>
+      <label>求职进度<select value={stageFilter} onChange={event => setStageFilter(event.target.value)}><option>全部进度</option>{stageOptions.map(value => <option key={value}>{value}</option>)}</select></label>
+    </div>
+    <div className="feed-line"><span>{message}{feedDate && ` · 更新于 ${new Date(feedDate).toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" })}`}</span><button onClick={() => void loadFeed()}>重新载入</button></div>
+    <div className="global-cards">{displayed.map((item, index) => <article key={item.id} className={(stages[item.id] || "未跟进") === "面试中" ? "is-active" : ""}>
+      <div className="global-meta"><span>{String(index + 1).padStart(2, "0")} · {item.company}</span><span>{item.source} · {item.eligibility}</span></div>
+      <h2><a href={item.url} target="_blank" rel="noreferrer">{item.title} ↗</a></h2>
+      <p>{item.fit}</p><p className="record-location">{item.location} · {item.kind}</p>
+      <p><b>待核对：</b>{item.gap}</p>
+      <details><summary>证据与下一步</summary><p>{item.evidence}</p><p>{item.next}</p></details>
+      <div className="global-card-actions"><label>进度<select value={stages[item.id] || "未跟进"} onChange={event => updateStage(item.id, event.target.value as Stage)}>{stageOptions.map(value => <option key={value}>{value}</option>)}</select></label><button onClick={() => void copyBrief(item)}>复制 AI 研究任务</button></div>
     </article>)}</div>
-    {!visible.length&&<p>没有符合全部条件的记录，可放宽合作形式或查看待确认项。</p>}
-    <details className="global-live"><summary>官方招聘源自动发现</summary><p>定时程序读取 Welo Data、RWS 和 BJAK 的公开招聘接口。这里只展示线索；自动规则不会确认大陆签约资格或冒充AI评分。</p><button onClick={refresh}>载入最新结果 ↻</button><span> {feedDate?`最近成功采集：${new Date(feedDate).toLocaleString("zh-CN")}`:"尚未载入"}</span>{live.map(j=><p key={j.url}><a href={j.url} target="_blank" rel="noreferrer">{j.company} · {j.title} ↗</a> — {j.location} · {j.kind}</p>)}</details>
-    <p role="status">{message}</p>
+    {visible.length > displayed.length && <p className="global-note">为避免单一机构刷屏，每家机构最多展示 5 条；继续缩小关键词或切换方向，可以查看更有针对性的结果。</p>}
+    {!visible.length && <div className="empty-state"><strong>没有符合全部条件的机会</strong><p>可以清空关键词，或把大陆适用性改为“全部”。</p></div>}
+    <a className="history-link" href="#domestic-history">继续查看法律 AI 历史样本与市场分布 ↓</a>
   </section>;
 }

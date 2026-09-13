@@ -30,7 +30,8 @@ test("server-renders the AI career dashboard", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>AI 转型求职雷达｜公开招聘情报看板<\/title>/i);
-  assert.match(html, /从原行业出发，寻找 AI 工作/);
+  assert.match(html, /今天，先看最值得行动的机会/);
+  assert.match(html, /求职进度/);
   assert.match(html, /企业正在为怎样的/);
   assert.match(html, /全库条目/);
   assert.match(html, /每日两次自动检索并发布/);
@@ -97,4 +98,13 @@ test("builds a GitHub Pages mirror with repository-relative assets", async () =>
     readme,
     /https:\/\/zzqzzqzzq99\.github\.io\/ai-career-radar\//,
   );
+});
+
+test("maps the domestic feed using its published sourceUrl schema", async () => {
+  const component = await readFile(
+    new URL("../app/global-radar.tsx", import.meta.url),
+    "utf8",
+  );
+  assert.match(component, /sourceUrl: string/);
+  assert.match(component, /url: item\.sourceUrl/);
 });

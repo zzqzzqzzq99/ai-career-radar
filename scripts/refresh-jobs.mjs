@@ -161,7 +161,8 @@ const items = successfulQueries === 0 || (currentItems.length === 0 && previous.
   ? previous.items
   : currentItems;
 const payload = {
-  generatedAt: now.toISOString(),
+  generatedAt: successfulQueries > 0 ? now.toISOString() : previous.generatedAt,
+  lastAttemptAt: now.toISOString(),
   queryCount: queries.length,
   successfulQueries,
   itemCount: items.length,
