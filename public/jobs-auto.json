@@ -1,10 +1,30 @@
 {
-  "generatedAt": "2026-09-16T00:13:23.195Z",
-  "lastAttemptAt": "2026-09-16T00:13:23.195Z",
+  "generatedAt": "2026-09-16T12:13:27.921Z",
+  "lastAttemptAt": "2026-09-16T12:13:27.921Z",
   "queryCount": 12,
   "successfulQueries": 12,
-  "itemCount": 4,
+  "itemCount": 5,
   "items": [
+    {
+      "id": 453735488,
+      "company": "力诺集团",
+      "title": "法务经理/主管-AI方向",
+      "city": "济南·历城·孙村",
+      "salary": "1-2万",
+      "experience": "1-3年",
+      "education": "本科",
+      "date": "2026-09-16 自动发现",
+      "added": "09-16",
+      "source": "智联招聘 · 自动检索",
+      "sourceUrl": "https://www.zhaopin.com/jobdetail/CC120759260J40878787807.htm",
+      "status": "自动发现",
+      "category": "产品",
+      "scope": [
+        "法律 AI"
+      ],
+      "summary": "定时检索发现：力诺集团正在发布“法务经理/主管-AI方向”，页面展示地点为济南·历城·孙村，薪资为1-2万。",
+      "signal": "由定时检索自动发现并直接发布；请打开原始招聘页面自行判断岗位状态、职责和投递价值。"
+    },
     {
       "id": 272247772,
       "company": "天府绛溪实验室",
