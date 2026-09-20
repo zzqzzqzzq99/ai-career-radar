@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-20T00:14:11.534Z",
-  "lastAttemptAt": "2026-09-20T00:14:11.534Z",
+  "generatedAt": "2026-09-20T12:12:05.205Z",
+  "lastAttemptAt": "2026-09-20T12:12:05.205Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-09-20T00:14:11.534Z",
+      "checkedAt": "2026-09-20T12:12:05.205Z",
       "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-09-20T00:14:11.534Z",
+      "checkedAt": "2026-09-20T12:12:05.205Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-09-20T00:14:11.534Z",
+      "checkedAt": "2026-09-20T12:12:05.205Z",
       "ok": true
     }
   ],
@@ -76,14 +76,6 @@
       "location": "China",
       "kind": "FullTime",
       "url": "https://jobs.ashbyhq.com/bjakcareer/cd0909cf-6c49-4893-8268-07dfb30a0900",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "ActAI Workplace Experience Manager",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/919d65da-5edd-4c8f-a405-c3a5bd42c22d",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
