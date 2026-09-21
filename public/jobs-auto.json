@@ -1,10 +1,30 @@
 {
-  "generatedAt": "2026-09-21T00:14:00.725Z",
-  "lastAttemptAt": "2026-09-21T00:14:00.725Z",
+  "generatedAt": "2026-09-21T12:12:10.272Z",
+  "lastAttemptAt": "2026-09-21T12:12:10.272Z",
   "queryCount": 12,
   "successfulQueries": 12,
-  "itemCount": 4,
+  "itemCount": 5,
   "items": [
+    {
+      "id": 467490519,
+      "company": "位来小猎(宁波)信息技术有限公司",
+      "title": "AI数据标注与评测专家（法律方向）",
+      "city": "成都·双流·西航港",
+      "salary": "1.5-2.5万",
+      "experience": "1-3年",
+      "education": "硕士",
+      "date": "2026-09-21 自动发现",
+      "added": "09-21",
+      "source": "智联招聘 · 自动检索",
+      "sourceUrl": "https://www.zhaopin.com/jobdetail/CCL1320375780J40879909007.htm",
+      "status": "自动发现",
+      "category": "技术",
+      "scope": [
+        "模型评测"
+      ],
+      "summary": "定时检索发现：位来小猎(宁波)信息技术有限公司正在发布“AI数据标注与评测专家（法律方向）”，页面展示地点为成都·双流·西航港，薪资为1.5-2.5万。",
+      "signal": "由定时检索自动发现并直接发布；请打开原始招聘页面自行判断岗位状态、职责和投递价值。"
+    },
     {
       "id": 453735488,
       "company": "力诺集团",
