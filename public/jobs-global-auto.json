@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-24T12:12:52.990Z",
-  "lastAttemptAt": "2026-09-24T12:12:52.990Z",
+  "generatedAt": "2026-09-25T03:29:06.651Z",
+  "lastAttemptAt": "2026-09-25T03:29:06.651Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-09-24T12:12:52.990Z",
+      "checkedAt": "2026-09-25T03:29:06.651Z",
       "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-09-24T12:12:52.990Z",
+      "checkedAt": "2026-09-25T03:29:06.651Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-09-24T12:12:52.990Z",
+      "checkedAt": "2026-09-25T03:29:06.651Z",
       "ok": true
     }
   ],
@@ -60,6 +60,14 @@
       "location": "China",
       "kind": "FullTime",
       "url": "https://jobs.ashbyhq.com/bjakcareer/278f5ef7-50c9-4514-93eb-d3d07f596181",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Applied AI Engineer",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/cb5b5d4a-e889-467b-a6cb-5da46b8b9981",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
