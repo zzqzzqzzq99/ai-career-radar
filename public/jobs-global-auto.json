@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-28T03:42:27.789Z",
-  "lastAttemptAt": "2026-09-28T03:42:27.789Z",
+  "generatedAt": "2026-09-28T19:15:27.523Z",
+  "lastAttemptAt": "2026-09-28T19:15:27.523Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-09-28T03:42:27.789Z",
+      "checkedAt": "2026-09-28T19:15:27.523Z",
       "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-09-28T03:42:27.789Z",
+      "checkedAt": "2026-09-28T19:15:27.523Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-09-28T03:42:27.789Z",
+      "checkedAt": "2026-09-28T19:15:27.523Z",
       "ok": true
     }
   ],
@@ -33,7 +33,7 @@
     {
       "company": "Welo Data",
       "title": "Generative AI Analyst | Simplified Chinese",
-      "location": "China / China / Malaysia / Singapore / Indonesia / Taiwan",
+      "location": "China / China / Malaysia / Singapore / Indonesia / Taiwan / Hong Kong",
       "kind": "Freelance-Remote",
       "url": "https://jobs.lever.co/weloglobal/c169172d-6b2e-45a8-885d-78723b1a7a1c",
       "eligibility": "待逐岗核对正文与地区资格"
