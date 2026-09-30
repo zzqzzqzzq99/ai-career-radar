@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-30T04:01:26.872Z",
-  "lastAttemptAt": "2026-09-30T04:01:26.872Z",
+  "generatedAt": "2026-09-30T17:37:58.386Z",
+  "lastAttemptAt": "2026-09-30T17:37:58.386Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-09-30T04:01:26.872Z",
+      "checkedAt": "2026-09-30T17:37:58.386Z",
       "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-09-30T04:01:26.872Z",
+      "checkedAt": "2026-09-30T17:37:58.386Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-09-30T04:01:26.872Z",
+      "checkedAt": "2026-09-30T17:37:58.386Z",
       "ok": true
     }
   ],
@@ -328,7 +328,7 @@
     },
     {
       "company": "BJAK",
-      "title": "Lead Engineer - AI-native Email Apps",
+      "title": "Lead Engineer - AI-Native Email Apps",
       "location": "China",
       "kind": "FullTime",
       "url": "https://jobs.ashbyhq.com/bjakcareer/5e6d031b-6500-4d83-99d5-960a2e6b2de7",
