@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-10-05T04:06:41.829Z",
-  "lastAttemptAt": "2026-10-05T04:06:41.829Z",
+  "generatedAt": "2026-10-06T04:55:37.427Z",
+  "lastAttemptAt": "2026-10-06T04:55:37.427Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-10-05T04:06:41.829Z",
+      "checkedAt": "2026-10-06T04:55:37.427Z",
       "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-10-05T04:06:41.829Z",
+      "checkedAt": "2026-10-06T04:55:37.427Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-10-05T04:06:41.829Z",
+      "checkedAt": "2026-10-06T04:55:37.427Z",
       "ok": true
     }
   ],
@@ -276,22 +276,6 @@
       "location": "China",
       "kind": "FullTime",
       "url": "https://jobs.ashbyhq.com/bjakcareer/4693af98-b7d4-47dd-a4c0-5d9ebdff081a",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Business Unit Head - AI Native Email App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/7ef1e4e8-25e2-4ef5-9926-10f39e1fa28c",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Business Unit Head - AI Payments App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/688a84a8-d4d6-450c-8b81-94d6f0a74593",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
@@ -660,6 +644,22 @@
       "location": "China",
       "kind": "FullTime",
       "url": "https://jobs.ashbyhq.com/bjakcareer/e57f9f8a-a212-4690-bd74-aad623a3e4c5",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Business Unit Head - AI Payments App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/ac5d6717-0616-4f5b-bba7-96e6b36d2e89",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Business Unit Head - AI Native Email App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/52104b6c-2c2e-4c23-948c-4e9db9877d38",
       "eligibility": "待逐岗核对正文与地区资格"
     }
   ]
