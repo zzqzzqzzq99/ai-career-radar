@@ -1,30 +1,10 @@
 {
-  "generatedAt": "2026-10-10T04:22:44.878Z",
-  "lastAttemptAt": "2026-10-10T04:22:44.878Z",
+  "generatedAt": "2026-10-10T16:59:21.750Z",
+  "lastAttemptAt": "2026-10-10T16:59:21.750Z",
   "queryCount": 12,
   "successfulQueries": 12,
-  "itemCount": 5,
+  "itemCount": 4,
   "items": [
-    {
-      "id": 654944820,
-      "company": "广东知恒(广州)律师事务所",
-      "title": "法律实习生（企业 AI 治理、企业合规方向）",
-      "city": "广州·天河·猎德",
-      "salary": "150-200元/天",
-      "experience": "经验不限",
-      "education": "本科",
-      "date": "2026-10-10 自动发现",
-      "added": "10-10",
-      "source": "智联招聘 · 自动检索",
-      "sourceUrl": "https://www.zhaopin.com/jobdetail/CCL1417049000J40894808409.htm",
-      "status": "自动发现",
-      "category": "产品",
-      "scope": [
-        "合规风控"
-      ],
-      "summary": "定时检索发现：广东知恒(广州)律师事务所正在发布“法律实习生（企业 AI 治理、企业合规方向）”，页面展示地点为广州·天河·猎德，薪资为150-200元/天。",
-      "signal": "由定时检索自动发现并直接发布；请打开原始招聘页面自行判断岗位状态、职责和投递价值。"
-    },
     {
       "id": 581444395,
       "company": "南京通达海科技股份有限公司",
