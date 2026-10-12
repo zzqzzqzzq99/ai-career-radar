@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-10-11T17:20:28.629Z",
-  "lastAttemptAt": "2026-10-11T17:20:28.629Z",
+  "generatedAt": "2026-10-12T04:23:03.097Z",
+  "lastAttemptAt": "2026-10-12T04:23:03.097Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-10-11T17:20:28.629Z",
+      "checkedAt": "2026-10-12T04:23:03.097Z",
       "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-10-11T17:20:28.629Z",
+      "checkedAt": "2026-10-12T04:23:03.097Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-10-11T17:20:28.629Z",
+      "checkedAt": "2026-10-12T04:23:03.097Z",
       "ok": true
     }
   ],
@@ -660,6 +660,14 @@
       "location": "China",
       "kind": "FullTime",
       "url": "https://jobs.ashbyhq.com/bjakcareer/52104b6c-2c2e-4c23-948c-4e9db9877d38",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "AI Security Engineer",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/0274de8a-4ca0-4f68-b16f-a8beac7a2311",
       "eligibility": "待逐岗核对正文与地区资格"
     }
   ]
