@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-10-12T04:23:03.097Z",
-  "lastAttemptAt": "2026-10-12T04:23:03.097Z",
+  "generatedAt": "2026-10-12T20:55:10.329Z",
+  "lastAttemptAt": "2026-10-12T20:55:10.329Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-10-12T04:23:03.097Z",
+      "checkedAt": "2026-10-12T20:55:10.329Z",
       "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-10-12T04:23:03.097Z",
+      "checkedAt": "2026-10-12T20:55:10.329Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-10-12T04:23:03.097Z",
+      "checkedAt": "2026-10-12T20:55:10.329Z",
       "ok": true
     }
   ],
@@ -216,14 +216,6 @@
     },
     {
       "company": "BJAK",
-      "title": "Technical Product Manager, AI Systems",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/897e70fa-6023-463a-8ec4-8b6723685120",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
       "title": "Lead Engineer, AI Internal Systems",
       "location": "China",
       "kind": "FullTime",
@@ -340,22 +332,6 @@
       "location": "China",
       "kind": "FullTime",
       "url": "https://jobs.ashbyhq.com/bjakcareer/a9df27f8-87fc-4dfb-ab72-1d9598dcd333",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Senior Technical Product Manager, AI Agents & Systems",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/c128913b-5e5d-48cb-aab1-97003377814e",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Senior Technical Product Manager - AI Agents, Evals & Reliability",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/966df7d3-f7a9-4981-aad9-778b0018f3d2",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
