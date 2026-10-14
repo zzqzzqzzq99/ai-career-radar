@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-10-14T03:35:00.173Z",
-  "lastAttemptAt": "2026-10-14T03:35:00.173Z",
+  "generatedAt": "2026-10-14T16:33:53.864Z",
+  "lastAttemptAt": "2026-10-14T16:33:53.864Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-10-14T03:35:00.173Z",
+      "checkedAt": "2026-10-14T16:33:53.864Z",
       "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-10-14T03:35:00.173Z",
+      "checkedAt": "2026-10-14T16:33:53.864Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-10-14T03:35:00.173Z",
+      "checkedAt": "2026-10-14T16:33:53.864Z",
       "ok": true
     }
   ],
@@ -520,7 +520,7 @@
     },
     {
       "company": "BJAK",
-      "title": "Technical Product Lead - AI Finance",
+      "title": "Technical Product Manager - AI Finance",
       "location": "China",
       "kind": "FullTime",
       "url": "https://jobs.ashbyhq.com/bjakcareer/b59e5e2c-331b-4373-b8e0-965408ec417c",
