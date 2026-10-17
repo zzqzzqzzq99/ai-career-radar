@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-16T16:06:17.358Z",
-  "lastAttemptAt": "2026-10-16T16:06:17.358Z",
+  "generatedAt": "2026-10-17T03:01:45.966Z",
+  "lastAttemptAt": "2026-10-17T03:01:45.966Z",
   "queryCount": 12,
   "successfulQueries": 12,
-  "itemCount": 4,
+  "itemCount": 3,
   "items": [
     {
       "id": 335673664,
@@ -13,8 +13,8 @@
       "salary": "8000-12000元",
       "experience": "经验不限",
       "education": "本科",
-      "date": "2026-10-16 自动发现",
-      "added": "10-16",
+      "date": "2026-10-17 自动发现",
+      "added": "10-17",
       "source": "智联招聘 · 自动检索",
       "sourceUrl": "https://www.zhaopin.com/jobdetail/CC131954040J41040162702.htm",
       "status": "自动发现",
@@ -33,8 +33,8 @@
       "salary": "1.5-2.5万",
       "experience": "3-5年",
       "education": "本科",
-      "date": "2026-10-16 自动发现",
-      "added": "10-16",
+      "date": "2026-10-17 自动发现",
+      "added": "10-17",
       "source": "智联招聘 · 自动检索",
       "sourceUrl": "https://www.zhaopin.com/jobdetail/CCL1515318980J40785228306.htm",
       "status": "自动发现",
@@ -46,26 +46,6 @@
       "signal": "由定时检索自动发现并直接发布；请打开原始招聘页面自行判断岗位状态、职责和投递价值。"
     },
     {
-      "id": 467490519,
-      "company": "位来小猎(宁波)信息技术有限公司",
-      "title": "AI数据标注与评测专家（法律方向）",
-      "city": "成都·双流·西航港",
-      "salary": "1.5-2.5万",
-      "experience": "1-3年",
-      "education": "硕士",
-      "date": "2026-10-16 自动发现",
-      "added": "10-16",
-      "source": "智联招聘 · 自动检索",
-      "sourceUrl": "https://www.zhaopin.com/jobdetail/CCL1320375780J40879909007.htm",
-      "status": "自动发现",
-      "category": "技术",
-      "scope": [
-        "模型评测"
-      ],
-      "summary": "定时检索发现：位来小猎(宁波)信息技术有限公司正在发布“AI数据标注与评测专家（法律方向）”，页面展示地点为成都·双流·西航港，薪资为1.5-2.5万。",
-      "signal": "由定时检索自动发现并直接发布；请打开原始招聘页面自行判断岗位状态、职责和投递价值。"
-    },
-    {
       "id": 370979246,
       "company": "北京华宇元典信息服务有限公司",
       "title": "法律产品内容编辑-法律AI方向(J11105)",
@@ -73,8 +53,8 @@
       "salary": "1-2万",
       "experience": "3-5年",
       "education": "本科",
-      "date": "2026-10-16 自动发现",
-      "added": "10-16",
+      "date": "2026-10-17 自动发现",
+      "added": "10-17",
       "source": "智联招聘 · 自动检索",
       "sourceUrl": "https://www.zhaopin.com/jobdetail/CC409922380J41025978702.htm",
       "status": "自动发现",
