@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-24T03:19:27.174Z",
-  "lastAttemptAt": "2026-10-24T03:19:27.174Z",
+  "generatedAt": "2026-10-24T15:23:58.063Z",
+  "lastAttemptAt": "2026-10-24T15:23:58.063Z",
   "queryCount": 12,
   "successfulQueries": 12,
   "itemCount": 5,
@@ -26,23 +26,23 @@
       "signal": "由定时检索自动发现并直接发布；请打开原始招聘页面自行判断岗位状态、职责和投递价值。"
     },
     {
-      "id": 129579381,
+      "id": 174932481,
       "company": "金慧科技",
-      "title": "法律/法学 AI智能体大模型测评专员",
+      "title": "AI 大模型评测工程师（法律垂类）",
       "city": "成都·武侯·桂溪",
-      "salary": "7000-10000元",
-      "experience": "经验不限",
+      "salary": "8000-16000元",
+      "experience": "1-3年",
       "education": "本科",
       "date": "2026-10-24 自动发现",
       "added": "10-24",
       "source": "智联招聘 · 自动检索",
-      "sourceUrl": "https://www.zhaopin.com/jobdetail/CC612833320J40886342501.htm",
+      "sourceUrl": "https://www.zhaopin.com/jobdetail/CC612833320J40886153901.htm",
       "status": "自动发现",
-      "category": "产品",
+      "category": "技术",
       "scope": [
-        "Agent"
+        "模型评测"
       ],
-      "summary": "定时检索发现：金慧科技正在发布“法律/法学 AI智能体大模型测评专员”，页面展示地点为成都·武侯·桂溪，薪资为7000-10000元。",
+      "summary": "定时检索发现：金慧科技正在发布“AI 大模型评测工程师（法律垂类）”，页面展示地点为成都·武侯·桂溪，薪资为8000-16000元。",
       "signal": "由定时检索自动发现并直接发布；请打开原始招聘页面自行判断岗位状态、职责和投递价值。"
     },
     {
