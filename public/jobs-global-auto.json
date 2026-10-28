@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-10-28T04:02:05.693Z",
-  "lastAttemptAt": "2026-10-28T04:02:05.693Z",
+  "generatedAt": "2026-10-28T17:54:26.259Z",
+  "lastAttemptAt": "2026-10-28T17:54:26.259Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-10-28T04:02:05.693Z",
-      "ok": true
+      "checkedAt": "2026-10-28T17:54:26.259Z",
+      "ok": false
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-10-28T04:02:05.693Z",
+      "checkedAt": "2026-10-28T17:54:26.259Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-10-28T04:02:05.693Z",
+      "checkedAt": "2026-10-28T17:54:26.259Z",
       "ok": true
     }
   ],
@@ -328,14 +328,6 @@
     },
     {
       "company": "BJAK",
-      "title": "Product Owner, AI Email App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/0c6aaf37-70df-4260-9424-11762d260c8d",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
       "title": "Staff Software Engineer, AI Email App",
       "location": "China",
       "kind": "FullTime",
@@ -360,22 +352,6 @@
     },
     {
       "company": "BJAK",
-      "title": "Product Lead, AI Email App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/e1b01754-342a-4dca-ad58-aa6e2afede0c",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Engineer, AI Email App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/534de57b-8789-432d-a3b3-b8ebed9b3f29",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
       "title": "Principal Software Engineer, AI Email App",
       "location": "China",
       "kind": "FullTime",
@@ -396,14 +372,6 @@
       "location": "China",
       "kind": "FullTime",
       "url": "https://jobs.ashbyhq.com/bjakcareer/c9485625-d4e2-4859-8ecb-bfb569fe1e6b",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Technical Product Lead, AI Email App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/f21ce5a6-3483-4484-9b02-b98943f185e0",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
