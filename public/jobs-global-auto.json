@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-11-09T21:56:49.295Z",
-  "lastAttemptAt": "2026-11-09T21:56:49.295Z",
+  "generatedAt": "2026-11-10T05:58:40.340Z",
+  "lastAttemptAt": "2026-11-10T05:58:40.340Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-11-09T21:56:49.295Z",
+      "checkedAt": "2026-11-10T05:58:40.340Z",
       "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-11-09T21:56:49.295Z",
+      "checkedAt": "2026-11-10T05:58:40.340Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-11-09T21:56:49.295Z",
+      "checkedAt": "2026-11-10T05:58:40.340Z",
       "ok": true
     }
   ],
@@ -32,130 +32,10 @@
     },
     {
       "company": "BJAK",
-      "title": "Technical Product Manager - AI Neobank",
+      "title": "Applied AI Engineer - AI Finance Agent",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/006ca626-cb2f-4dbd-b233-038fe792dad7",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Security Engineer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/0274de8a-4ca0-4f68-b16f-a8beac7a2311",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Engineering Manager - AI Payments App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/02e64061-06bd-4ac1-8bd8-4367d754981d",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Mobile Application Developer - AI Finance Agent",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/09c3e540-d827-4877-92d2-7c807e3ca5c4",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Backend Software Engineer - AI Finance Agent",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/0cac93ef-04d8-42c4-b698-efb4664cd91b",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Phone - Head of Android / AOSP",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/0da17a0a-81ba-4a5d-8909-d509e5b0f8b4",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Manager - AI Investing",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/0fb332d1-7703-44dd-baed-833568b83b48",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Mobile Engineer - AI Finance Agent",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/101d89f0-f66b-45c4-8f05-2d2a784dae1c",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Owner, Technical - AI Neobank",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/10ac06a9-096d-4084-86bc-73da26b64934",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Lead - AI Investing",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/1273f299-9d5e-4100-ae1f-874e1e01ffc2",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Manager - AI Stockbroking",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/141148dd-304a-40c1-bdce-e958d364a570",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Engineer - AI Investing",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/17083ef3-ce53-4ddf-a45b-946fbc0ddf21",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "CEO, AI Finance",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/17dae96e-677b-4e69-ae54-4200426a89f9",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Phone - Product Lead",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/1c3bf24b-3b18-4bc1-beea-566597651325",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Phone - Applied ML / Model Engineer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/22eea8fd-4dad-4087-9d08-13b06acdbcc3",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Mobile Application Developer - AI Neobank App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/23dda88d-8e90-4fbf-9429-f7cc235e5263",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/89ad2be8-f664-4224-8d17-9e53d84dcfd2",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
@@ -168,82 +48,50 @@
     },
     {
       "company": "BJAK",
-      "title": "Android Software Engineer - AI Finance Agent ",
+      "title": "Applied AI Engineer",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/294f2095-c447-404d-8a3e-d8528643f300",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/cb5b5d4a-e889-467b-a6cb-5da46b8b9981",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "Technical Product Lead - AI Stockbroking",
+      "title": "Applied AI Engineer",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/2ab98432-05f2-418a-aa35-2b48687830d1",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/c48a8c9f-b7ca-4c7d-ad90-d8964d27c52f",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "Staff Software Engineer, AI Email App",
+      "title": "Android Developer - AI Finance Agent",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/2d62297c-054d-4a8f-b86b-0e3b696072ea",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/cd0909cf-6c49-4893-8268-07dfb30a0900",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "Full Stack Engineer, AI systems",
+      "title": "iOS Developer - AI Finance Agent",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/2dff0549-f89c-4be3-bddc-c26394c6d5f2",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/e9e8cd14-d878-4c90-8717-c7139196dfe3",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "Product Lead - AI Stockbroking",
+      "title": "Backend Software Engineer - AI Finance Agent",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/327e73c3-a6c6-4a55-84dd-52ace5f73363",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/0cac93ef-04d8-42c4-b698-efb4664cd91b",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "Lead Engineer, AI Internal Systems",
+      "title": "Applied AI Engineer",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/3aba7a83-b792-4ba1-b90c-865d41ab1d35",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Phone - Senior Android System Engineer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/3ac8e495-6117-45b2-96f1-9ae9b4632927",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Phone - AI Systems / Agent Architect",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/3e2e9cea-4d1f-4d62-8053-200e6e81ac73",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Lead Engineer - AI Payments App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/466d4ef3-5b06-4da4-9de2-fc567cb784b1",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Backend Engineer, AI Internal Systems",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/4693af98-b7d4-47dd-a4c0-5d9ebdff081a",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/bbc89cf7-ebc9-4c2d-a210-6d63d7083b90",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
@@ -256,14 +104,6 @@
     },
     {
       "company": "BJAK",
-      "title": "CEO - AI Finance",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/4e84c3a7-0f4e-4a77-8254-5e749d993f40",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
       "title": "Mobile Engineer - AI Finance Agent",
       "location": "China",
       "kind": "FullTime",
@@ -272,34 +112,42 @@
     },
     {
       "company": "BJAK",
-      "title": "Business Unit Head - AI Native Email App",
+      "title": "Android Software Engineer - AI Finance Agent ",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/52104b6c-2c2e-4c23-948c-4e9db9877d38",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/294f2095-c447-404d-8a3e-d8528643f300",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "Lead Engineer - AI-Native Email App",
+      "title": "Mobile Application Developer - AI Finance Agent",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/58a0356b-c10e-47d3-85fa-f5ec52841e81",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/09c3e540-d827-4877-92d2-7c807e3ca5c4",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "Backend Engineer, AI (Agent Systems)",
+      "title": "UI Designer - AI Neobank App",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/5a551446-ac37-4444-b3ac-a228fafa035b",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/b7d45ff0-c15d-443b-8c5f-d9fe6f2f4067",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "Lead Engineer - AI-Native Email App",
+      "title": "Mobile Application Developer - AI Neobank App",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/5e6d031b-6500-4d83-99d5-960a2e6b2de7",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/23dda88d-8e90-4fbf-9429-f7cc235e5263",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Android Developer - AI Finance Agent",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/ec181cb2-ba0a-4b35-9d36-a6659f432187",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
@@ -312,6 +160,14 @@
     },
     {
       "company": "BJAK",
+      "title": "Mobile Engineer - AI Finance Agent",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/101d89f0-f66b-45c4-8f05-2d2a784dae1c",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
       "title": "Product Lead - AI Neobank App",
       "location": "China",
       "kind": "FullTime",
@@ -320,90 +176,10 @@
     },
     {
       "company": "BJAK",
-      "title": "AI Phone - Security & Privacy Engineer",
+      "title": "Product Manager - AI Neobank App",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/639348cb-98a5-470f-a4ad-1bd73f5011bb",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Owner, Technical - AI Investing",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/6945d203-dde4-4852-8426-8f5ff5750e0a",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Engineering Manager - AI Payments App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/6c60fc27-0f0d-4edc-b0c4-2a6b6984659f",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Technical Product Lead - AI Finance",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/6f6fcee9-dd5f-4fe7-b3e4-5d9d1b9e99b9",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Owner, AI Internal Systems",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/705d2156-d34f-4f2b-9266-f78de0e09c60",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Lead Software Engineer, AI Email App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/78ad025f-9479-4b23-82b5-ccca09ba0934",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Phone - AI Application Integration Engineer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/78f6c0b7-4c86-4829-b968-00e75e4b182d",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Phone - Agentic Engineer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/7d1ed858-c1bd-4abe-b81e-b034aa907428",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "CEO - AI Investing",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/7f5affe3-bcbd-440e-a9d8-cd3651710693",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "CEO, AI Investing",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/80fe510c-df88-4ced-8863-9f13db32ce4e",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Manager - AI Finance",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/81cbc44a-f457-456f-b50e-9f1a088bf90b",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/ab741f0f-44d1-44a8-aa6a-368cb592fca2",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
@@ -416,7 +192,103 @@
     },
     {
       "company": "BJAK",
-      "title": "Engineering Lead, AI Email App",
+      "title": "Backend Engineer, AI Systems",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/5a551446-ac37-4444-b3ac-a228fafa035b",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Full Stack Engineer, AI systems",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/2dff0549-f89c-4be3-bddc-c26394c6d5f2",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Product Engineer - AI Investing",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/17083ef3-ce53-4ddf-a45b-946fbc0ddf21",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "CEO Office - AI Neobank App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/d48dd856-54c7-49c7-a031-9cb521196cc3",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Engineering Manager - AI-Native Email App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/d3f6fbe0-3f40-4b38-93d9-2ff3f0f9e63d",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Engineering Manager - AI-Native Email App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/df8e80bd-346e-4657-8952-77e45d413638",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Lead Engineer - AI-Native Email App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/58a0356b-c10e-47d3-85fa-f5ec52841e81",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Engineering Manager - AI Payments App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/02e64061-06bd-4ac1-8bd8-4367d754981d",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Lead Engineer - AI-Native Email App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/5e6d031b-6500-4d83-99d5-960a2e6b2de7",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Lead Engineer - AI Payments App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/466d4ef3-5b06-4da4-9de2-fc567cb784b1",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Engineering Manager - AI Payments App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/6c60fc27-0f0d-4edc-b0c4-2a6b6984659f",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Product Engineer - AI Neobank",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/a9df27f8-87fc-4dfb-ab72-1d9598dcd333",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Engineering Lead, AI Applications",
       "location": "China",
       "kind": "FullTime",
       "url": "https://jobs.ashbyhq.com/bjakcareer/857b65b2-31f7-4b9d-9052-ec594816569e",
@@ -424,26 +296,194 @@
     },
     {
       "company": "BJAK",
-      "title": "Applied AI Engineer - AI Finance Agent",
+      "title": "Staff Software Engineer, AI Applications",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/89ad2be8-f664-4224-8d17-9e53d84dcfd2",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/2d62297c-054d-4a8f-b86b-0e3b696072ea",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "Full Stack Engineer, AI Internal Systems",
+      "title": "Product Engineer - AI Stockbroking",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/8a1ac53b-279c-4fe7-b126-1fbe2b284e92",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/9a7d4540-0512-46a1-9a00-e051d7e04a87",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "Technical Lead, AI Email App",
+      "title": "Product Owner, Technical - AI Finance",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/8b7819fc-86f9-428f-a07a-db2eaf97d90f",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/e2152106-b989-4857-b5c3-505562aa1852",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Product Owner, Technical - AI Stockbroking",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/c9485625-d4e2-4859-8ecb-bfb569fe1e6b",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Product Owner, Technical - AI Investing",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/6945d203-dde4-4852-8426-8f5ff5750e0a",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Product Owner, Technical - AI Neobank",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/10ac06a9-096d-4084-86bc-73da26b64934",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Product Manager - AI Finance",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/81cbc44a-f457-456f-b50e-9f1a088bf90b",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Product Lead - AI Investing",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/1273f299-9d5e-4100-ae1f-874e1e01ffc2",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Product Manager - AI Investing",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/0fb332d1-7703-44dd-baed-833568b83b48",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Product Manager - AI Stockbroking",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/141148dd-304a-40c1-bdce-e958d364a570",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Product Lead - AI Stockbroking",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/327e73c3-a6c6-4a55-84dd-52ace5f73363",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "CEO - AI Finance",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/4e84c3a7-0f4e-4a77-8254-5e749d993f40",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "CEO - AI Neobank",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/f15a0e6a-87b4-4db8-929c-f4b3791039fe",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "CEO - AI Investing",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/7f5affe3-bcbd-440e-a9d8-cd3651710693",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "CEO - AI Stockbroking",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/f886242b-eba1-4738-a8a9-31b13a5299fe",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Technical Product Manager - AI Finance",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/b59e5e2c-331b-4373-b8e0-965408ec417c",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "CEO, AI Finance",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/17dae96e-677b-4e69-ae54-4200426a89f9",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "CEO, AI Neobank",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/e58f060a-4a8a-4d8d-9eb0-b84fa02f9def",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "CEO, AI Investing",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/80fe510c-df88-4ced-8863-9f13db32ce4e",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "CEO, AI Stockbroking",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/ad2667b1-6bc9-4483-9242-60995792da7d",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Technical Product Manager - AI Neobank",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/006ca626-cb2f-4dbd-b233-038fe792dad7",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Technical Product Manager - AI Investing",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/9540d9d6-14e4-4270-9fc6-3bc6230f2c24",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Technical Product Manager - AI Stockbroking",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/af899bdc-8be7-4dee-ab95-44e800fd28b1",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Technical Product Lead - AI Finance",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/6f6fcee9-dd5f-4fe7-b3e4-5d9d1b9e99b9",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
@@ -464,186 +504,10 @@
     },
     {
       "company": "BJAK",
-      "title": "Technical Product Manager - AI Investing",
+      "title": "Technical Product Lead - AI Stockbroking",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/9540d9d6-14e4-4270-9fc6-3bc6230f2c24",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Engineer - AI Stockbroking",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/9a7d4540-0512-46a1-9a00-e051d7e04a87",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Phone - Android / AOSP Engineer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/a687b1ff-de02-4781-b71f-0509a42b09c2",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Engineer - AI Neobank",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/a9df27f8-87fc-4dfb-ab72-1d9598dcd333",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Manager - AI Neobank App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/ab741f0f-44d1-44a8-aa6a-368cb592fca2",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Business Unit Head - AI Payments App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/ac5d6717-0616-4f5b-bba7-96e6b36d2e89",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "CEO, AI Stockbroking",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/ad2667b1-6bc9-4483-9242-60995792da7d",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Technical Product Manager - AI Stockbroking",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/af899bdc-8be7-4dee-ab95-44e800fd28b1",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Phone - Android Device Integration Engineer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/b2e006e9-a24f-4464-b2d8-dd5dd5ea4c39",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Technical Product Manager - AI Finance",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/b59e5e2c-331b-4373-b8e0-965408ec417c",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "UI Designer - AI Neobank App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/b7d45ff0-c15d-443b-8c5f-d9fe6f2f4067",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Applied AI Engineer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/bbc89cf7-ebc9-4c2d-a210-6d63d7083b90",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Phone - Product Designer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/bfacdd0f-1c5c-4ee7-a8a7-92bd9f794c4f",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Applied AI Engineer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/c48a8c9f-b7ca-4c7d-ad90-d8964d27c52f",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Owner, Technical - AI Stockbroking",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/c9485625-d4e2-4859-8ecb-bfb569fe1e6b",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Applied AI Engineer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/cb5b5d4a-e889-467b-a6cb-5da46b8b9981",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Android Developer - AI Finance Agent",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/cd0909cf-6c49-4893-8268-07dfb30a0900",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Principal Software Engineer, AI Email App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/cf7002bf-8a9e-420e-8c59-fff7950339bc",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "AI Phone - On-device AI / ML Systems Engineer",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/d38560ac-dc3e-42f3-aff3-0ccd3aa1443e",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Engineering Manager - AI-Native Email App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/d3f6fbe0-3f40-4b38-93d9-2ff3f0f9e63d",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "CEO Office - AI Neobank App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/d48dd856-54c7-49c7-a031-9cb521196cc3",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Engineering Manager - AI-Native Email App",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/df8e80bd-346e-4657-8952-77e45d413638",
-      "eligibility": "待逐岗核对正文与地区资格"
-    },
-    {
-      "company": "BJAK",
-      "title": "Product Owner, Technical - AI Finance",
-      "location": "China",
-      "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/e2152106-b989-4857-b5c3-505562aa1852",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/2ab98432-05f2-418a-aa35-2b48687830d1",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
@@ -656,10 +520,66 @@
     },
     {
       "company": "BJAK",
-      "title": "CEO, AI Neobank",
+      "title": "Machine Learning Engineer, Applied AI",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/e58f060a-4a8a-4d8d-9eb0-b84fa02f9def",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/f829c3d1-3aad-41c4-841d-2ea520641119",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Business Unit Head - AI Payments App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/ac5d6717-0616-4f5b-bba7-96e6b36d2e89",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Business Unit Head - AI Native Email App",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/52104b6c-2c2e-4c23-948c-4e9db9877d38",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "AI Security Engineer",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/0274de8a-4ca0-4f68-b16f-a8beac7a2311",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "AI Phone - Head of Android / AOSP",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/0da17a0a-81ba-4a5d-8909-d509e5b0f8b4",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "AI Phone - AI Systems / Agent Architect",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/3e2e9cea-4d1f-4d62-8053-200e6e81ac73",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "AI Phone - Product Lead",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/1c3bf24b-3b18-4bc1-beea-566597651325",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "AI Phone - Senior Android System Engineer",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/3ac8e495-6117-45b2-96f1-9ae9b4632927",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
@@ -672,26 +592,42 @@
     },
     {
       "company": "BJAK",
-      "title": "iOS Developer - AI Finance Agent",
+      "title": "AI Phone - Android / AOSP Engineer",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/e9e8cd14-d878-4c90-8717-c7139196dfe3",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/a687b1ff-de02-4781-b71f-0509a42b09c2",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "Android Developer - AI Finance Agent",
+      "title": "AI Phone - Agentic Engineer",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/ec181cb2-ba0a-4b35-9d36-a6659f432187",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/7d1ed858-c1bd-4abe-b81e-b034aa907428",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "CEO - AI Neobank",
+      "title": "AI Phone - Product Designer",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/f15a0e6a-87b4-4db8-929c-f4b3791039fe",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/bfacdd0f-1c5c-4ee7-a8a7-92bd9f794c4f",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "AI Phone - AI Application Integration Engineer",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/78f6c0b7-4c86-4829-b968-00e75e4b182d",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "AI Phone - Android Device Integration Engineer",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/b2e006e9-a24f-4464-b2d8-dd5dd5ea4c39",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
@@ -704,18 +640,42 @@
     },
     {
       "company": "BJAK",
-      "title": "Machine Learning Engineer, Applied AI",
+      "title": "AI Phone - Security & Privacy Engineer",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/f829c3d1-3aad-41c4-841d-2ea520641119",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/639348cb-98a5-470f-a4ad-1bd73f5011bb",
       "eligibility": "待逐岗核对正文与地区资格"
     },
     {
       "company": "BJAK",
-      "title": "CEO - AI Stockbroking",
+      "title": "AI Phone - On-device AI / ML Systems Engineer",
       "location": "China",
       "kind": "FullTime",
-      "url": "https://jobs.ashbyhq.com/bjakcareer/f886242b-eba1-4738-a8a9-31b13a5299fe",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/d38560ac-dc3e-42f3-aff3-0ccd3aa1443e",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "AI Phone - Applied ML / Model Engineer",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/22eea8fd-4dad-4087-9d08-13b06acdbcc3",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Software Engineer, AI Automation",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/b32e9552-6806-49e8-8d83-0d7929f423af",
+      "eligibility": "待逐岗核对正文与地区资格"
+    },
+    {
+      "company": "BJAK",
+      "title": "Software Engineer, Internal AI Tools",
+      "location": "China",
+      "kind": "FullTime",
+      "url": "https://jobs.ashbyhq.com/bjakcareer/35ad5d2d-b662-4c54-9131-b081fd22b252",
       "eligibility": "待逐岗核对正文与地区资格"
     }
   ]
