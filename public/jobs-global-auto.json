@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-11-15T04:51:47.733Z",
-  "lastAttemptAt": "2026-11-15T04:51:47.733Z",
+  "generatedAt": "2026-11-15T18:29:44.140Z",
+  "lastAttemptAt": "2026-11-15T18:29:44.140Z",
   "sources": [
     {
       "company": "Welo Data",
       "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
-      "checkedAt": "2026-11-15T04:51:47.733Z",
+      "checkedAt": "2026-11-15T18:29:44.140Z",
       "ok": true
     },
     {
       "company": "RWS",
       "url": "https://api.lever.co/v0/postings/rws?mode=json",
-      "checkedAt": "2026-11-15T04:51:47.733Z",
+      "checkedAt": "2026-11-15T18:29:44.140Z",
       "ok": true
     },
     {
       "company": "BJAK",
       "url": "https://api.ashbyhq.com/posting-api/job-board/bjakcareer",
-      "checkedAt": "2026-11-15T04:51:47.733Z",
+      "checkedAt": "2026-11-15T18:29:44.140Z",
       "ok": true
     }
   ],
